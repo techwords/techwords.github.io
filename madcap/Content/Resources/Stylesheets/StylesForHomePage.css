@@ -1,0 +1,311 @@
+/*<meta />*/
+
+/*===========================================================================================================================================================
+
+Hello! If this is your first time looking at a stylesheet within the text editor view, what you are reading right now is a "comment". Comments are added throughout this stylesheet with the purpose of making the source code easier to understand, comments will not be interpreted during the compile process. Since comments are not interpreted during the compile process, feel free to add or remove any comments.
+
+For help with MadCap Flare go to Help Ribbon > Topics Section > Open Help. Alternatively visit the Flare Online Help at help.madcapsoftware.com
+
+If you have any questions regarding how to work with this stylesheet or template project, please contact MadCap Technical Support. 
+https://www.madcapsoftware.com/support/contact-options.aspx
+
+===========================================================================================================================================================*/
+
+/*==Home Page General Styles==*/
+
+body
+{
+	font-family: Arial;
+	line-height: 1.5em;
+}
+
+h1
+{
+	font-size: 2.75em;
+}
+
+h2
+{
+	font-size: 1.6785em;
+	color: #fff;
+}
+
+p
+{
+	color: #5a5a5a;
+	margin-bottom: 8px;
+	margin-top: 8px;
+}
+
+.center
+{
+	position: relative;
+	margin-right: auto;
+	margin-left: auto;
+	float: none !important;
+	text-align: center;
+}
+
+.off-canvas-content .main-section > .outer-row
+{
+	max-width: 100%;
+	padding: 0;
+}
+
+/*==Responsive Header Styles==*/
+
+div.top-container
+{
+	width: 52%;
+	margin-left: 24%;
+	margin-top: 2%;
+	margin-bottom: 2%;
+	background-color: #fff;
+	padding: 40px 50px;
+	min-height: 300px;
+	overflow: hidden;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	box-sizing: border-box;
+	-mox-box-sizing: border-box;
+}
+
+div.hero-image
+{
+	float: left;
+	width: 30%;
+	margin: 0;
+}
+
+div.heading-search-container
+{
+	float: right;
+	width: 65%;
+	line-height: 50px;
+}
+
+h1.home
+{
+	font-size: 2.5em;
+	font-weight: bold;
+	margin-top: 30px;
+	margin-bottom: 8px;
+	padding-bottom: 10px;
+	color: #955aa4;
+}
+
+/*==Home Tiles section==*/
+
+div.home-tiles	/*This layout was created using the Responsive Layout Editor in MadCap Flare. Go to: Home Ribbon > Styles Section > Responsive Layout*/
+{
+	mc-grid-row: true;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 1%;
+	margin-bottom: 1%;
+	width: 100%;
+	clear: both;
+	/*used to view the home tiles easier in the XML editor*/
+}
+
+div.home-tiles::before
+{
+	content: ' ';
+	display: table;
+}
+
+div.home-tiles::after
+{
+	content: ' ';
+	display: table;
+	clear: both;
+}
+
+div.home-tiles > div
+{
+	float: left;
+	padding: 15px 30px;
+	overflow: hidden;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	box-sizing: border-box;
+	-mox-box-sizing: border-box;
+}
+
+div.home-tiles > div:nth-child(1)
+{
+	width: 16%;
+	margin-left: 24%;
+	background-color: #25bcc3;
+}
+
+div.home-tiles > div:nth-child(2)
+{
+	width: 16%;
+	margin-left: 2%;
+	background-color: #ff6b31;
+}
+
+div.home-tiles > div:nth-child(3)
+{
+	width: 16%;
+	margin-left: 2%;
+	background-color: #fb9f0a;
+}
+
+div.home-tiles > div:nth-child(4)
+{
+	width: 52%;
+	margin-left: 24%;
+	margin-top: 2%;
+	padding-top: 80px;
+	padding-bottom: 10px;
+	padding-left: 50px;
+	padding-right: 50px;
+	margin-bottom: 2%;
+	color: #000000;
+	background-color: #fff;
+	font-size: .8em;
+}
+
+div.home-tiles > div:hover
+{
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+	transform: scale(1.05);
+}
+
+/*=Elements for text contained within each home-tile=*/
+
+p.tile-title
+{
+	color: #fff;
+	margin-top: 0px;
+	font-size: 1.3em;
+	font-weight: bold;
+}
+
+p.tile-content
+{
+	color: #ffffff;
+	font-size: .8em;
+}
+
+p.tile-button
+{
+	margin-top: 8px;
+	float: right;
+}
+
+p.bottom-tile-title
+{
+	color: #955aa4;
+	margin-top: 0px;
+	font-size: 1.5em;
+	font-weight: bold;
+	text-align: center;
+}
+
+div.home-tiles a	/*Complex Selector: Links within the home tiles will have the following properties*/
+{
+	text-decoration: none;
+	color: inherit;
+	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+div.home-tiles a:hover	/*Complex Selector: When hovering over links within the home tiles the following properties will apply.*/
+{
+	color: #808080;
+}
+
+/*===========================================================================================================================================================
+Styles after this point are styles that are for specific mediums. If any additional styles are added to this template they will be listed after mediums.
+[@media tablet] declares styles that will apply when the screen is in tablet view
+[@media mobile] declares styles that will apply when the screen is in mobile view
+===========================================================================================================================================================*/
+
+@media only screen and (max-width: 1279px)
+{
+	div.home-tiles > div:nth-child(1)
+	{
+		width: 26%;
+		margin-left: 10%;
+	}
+
+	div.home-tiles > div:nth-child(2)
+	{
+		width: 26%;
+		margin-left: 1%;
+	}
+
+	div.home-tiles > div:nth-child(3)
+	{
+		width: 26%;
+		margin-left: 1%;
+	}
+
+	div.home-tiles > div:nth-child(4)
+	{
+		margin-left: 10%;
+		width: 80%;
+	}
+
+	div.top-container
+	{
+		margin-left: 10%;
+		width: 80%;
+	}
+}
+
+@media only screen and (max-width: 767px)
+{
+	div.top-container
+	{
+		margin-left: 5%;
+		width: 90%;
+	}
+
+	div.hero-image
+	{
+		margin: auto;
+		float: none;
+		width: 60%;
+	}
+
+	div.heading-search-container
+	{
+		width: 100%;
+		float: none;
+	}
+
+	div.home-tiles > div
+	{
+		margin-top: 5%;
+	}
+
+	div.home-tiles > div:nth-child(1)
+	{
+		width: 90%;
+		margin-left: 5%;
+	}
+
+	div.home-tiles > div:nth-child(2)
+	{
+		width: 90%;
+		margin-left: 5%;
+	}
+
+	div.home-tiles > div:nth-child(3)
+	{
+		width: 90%;
+		margin-left: 5%;
+	}
+
+	div.home-tiles > div:nth-child(4)
+	{
+		margin-left: 5%;
+		margin-top: 5%;
+		width: 90%;
+		padding-top: 20px;
+		padding-right: 30px;
+		padding-left: 30px;
+	}
+}
+

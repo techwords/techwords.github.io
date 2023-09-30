@@ -6,15 +6,15 @@
 	{
 		background-position: center top;
 		background-repeat: no-repeat;
-		background-color: #076685;
+		background-color: transparent;
 	}
 
 	.title-bar-layout a.logo
 	{
-		width: 229px;
-		height: 55px;
-		background: transparent url('Images/PlaceholderLogo-white.png') no-repeat center center;
-		-pie-background: transparent url('Skins/Fluid/Stylesheets/Images/PlaceholderLogo-white.png') no-repeat center center;
+		width: 350px;
+		height: 121px;
+		background: transparent url('Images/Black White Modern Square Frame Photography Logo 1c.png') no-repeat center center;
+		-pie-background: transparent url('Skins/Fluid/Stylesheets/Images/Black White Modern Square Frame Photography Logo 1c.png') no-repeat center center;
 	}
 
 	.search-bar .search-submit
@@ -116,32 +116,32 @@
 
 	ul.off-canvas-list li a:hover
 	{
-		background-color: #303335;
+		background-color: #c0c0c0;
 	}
 
 	ul.off-canvas-list ul > li > a:hover
 	{
-		background-color: #303335;
+		background-color: #c0c0c0;
 	}
 
 	ul.off-canvas-list ul ul > li > a:hover
 	{
-		background-color: #303335;
+		background-color: #c0c0c0;
 	}
 
 	ul.off-canvas-list ul ul ul > li > a:hover
 	{
-		background-color: #303335;
+		background-color: #c0c0c0;
 	}
 
 	ul.off-canvas-list ul ul ul ul > li > a:hover
 	{
-		background-color: #303335;
+		background-color: #c0c0c0;
 	}
 
 	ul.off-canvas-list li.js-drilldown-back > a:hover
 	{
-		background-color: #303335;
+		background-color: #c0c0c0;
 	}
 
 	.central-separator
@@ -156,12 +156,12 @@
 
 	.title-bar-layout .logo-wrapper
 	{
-		min-height: 55px;
+		min-height: 121px;
 	}
 
 	.menu-icon-container
 	{
-		min-height: 55px;
+		min-height: 121px;
 	}
 
 	.off-canvas-wrapper-inner .main-section > .outer-row
@@ -181,12 +181,12 @@
 
 	.off-canvas
 	{
-		background-color: #303335;
+		background-color: #dcdcdc;
 	}
 
 	.off-canvas ul ul
 	{
-		background-color: #303335;
+		background-color: #dcdcdc;
 	}
 
 	ul.off-canvas-list li a
@@ -246,8 +246,8 @@
 
 	.title-bar .menu-icon span
 	{
-		background: transparent url('Images/Menu.png') no-repeat center center;
-		-pie-background: transparent url('Skins/Fluid/Stylesheets/Images/Menu.png') no-repeat center center;
+		background: transparent url('Images/HamburgerIcon-gray.png') no-repeat center center;
+		-pie-background: transparent url('Skins/Fluid/Stylesheets/Images/HamburgerIcon-gray.png') no-repeat center center;
 	}
 
 	nav.title-bar .menu-icon
@@ -288,17 +288,17 @@
 
 	.search-auto-complete li.auto-result-item.auto-result-selected
 	{
-		background-color: #f3f4f4;
+		background-color: #ececec;
 	}
 
 	.search-auto-complete li.auto-result-content.auto-result-selected
 	{
-		background-color: #f3f4f4;
+		background-color: #ececec;
 	}
 
 	.search-auto-complete li.auto-result-history.auto-result-selected
 	{
-		background-color: #f3f4f4;
+		background-color: #ececec;
 	}
 
 	.search-auto-complete li.auto-result-item .auto-result-description
@@ -391,8 +391,8 @@
 
 	.search-bar .search-field
 	{
-		background-color: #ffffff;
-		padding-right: 82px;
+		background-color: #f3f2f2;
+		padding-right: 50px;
 	}
 
 	.search-filter-content
@@ -450,19 +450,14 @@
 
 	.search-bar.search-bar-container .search-submit
 	{
-		background: #ffffff url('Images/icon-searchGray-17x17.png') no-repeat center center;
-		-pie-background: #ffffff url('Skins/Fluid/Stylesheets/Images/icon-searchGray-17x17.png') no-repeat center center;
-	}
-
-	.search-bar .search-filter-wrapper
-	{
-		right: 32px;
+		background-repeat: no-repeat;
+		background-color: #dadada;
 	}
 
 	.search-bar.search-bar-container .search-submit:hover
 	{
 		background-repeat: no-repeat;
-		background-color: #ffffff;
+		background-color: #dadada;
 	}
 
 	.skip-to-content

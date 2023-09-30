@@ -389,64 +389,50 @@
 
 .micro-response div.MCBreadcrumbsBox_0
 {
-	border-bottom-width: 0;
-	color: #45494c;
-	border-bottom-style: solid;
+	border-bottom: none;
+	font-size: .7em;
+	font-style: italic;
+	margin-top: 5px;
+	border-bottom-width: 1px;
+	border-bottom-style: none;
 	border-bottom-color: black;
 	padding-bottom: 10px;
 	margin-bottom: 10px;
 }
 
-.micro-response .dropDown
-{
-	border-bottom: 1px solid #d0d3d5;
-	padding: 10px 0;
-}
-
 .micro-response .dropDownHotspot
 {
-	cursor: hand;
-	text-decoration: none;
-	color: #45494c;
-	font-size: 20pt;
+	color: #f59405;
 	font-weight: bold;
-	border-bottom: none;
+	text-decoration: none;
 }
 
 .micro-response .dropDownHotspot:link
 {
-	cursor: hand;
-	text-decoration: none;
-	color: #45494c;
-	font-size: 20pt;
+	color: #f59405;
 	font-weight: bold;
-	border-bottom: none;
+	text-decoration: none;
 }
 
 .micro-response .MCDropDown_Open .MCDropDownHotSpot_.MCHotSpotImage
 {
 	background-position: left;
-	background-image: url('Minus.png');
-	padding-left: 10px;
+	background-image: url('arrow-down-gray.png');
+	padding-left: 0px;
 	padding-right: 0;
 }
 
 .micro-response .MCDropDown_Closed .MCDropDownHotSpot_.MCHotSpotImage
 {
 	background-position: left;
-	background-image: url('Plus.png');
-	padding-left: 10px;
+	background-image: url('arrow-right-gray.png');
+	padding-left: 0px;
 	padding-right: 0;
 }
 
 .micro-response .dropDownHead
 {
 	text-decoration: none;
-}
-
-.micro-response .dropDownBody
-{
-	padding: 10px 30px 0;
 }
 
 .micro-response .MCWebHelpFramesetLink a
