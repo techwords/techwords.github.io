@@ -580,6 +580,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Create Index File
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -589,6 +600,32 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#index-file-example" class="md-nav__link">
+    Index File Example
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -723,6 +760,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#index-file-example" class="md-nav__link">
+    Index File Example
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -737,7 +789,112 @@
 
 
 <h1 id="create-an-index-file">Create an Index File</h1>
-<p>Coming Soon: Steps for creating an index.html file for a public repo.</p>
+<p>For the Tech Words GitHub Pages main website, a single HTML file is used. This HTML file contains the text, links, and styles used on the page.</p>
+<ol>
+<li>Open GitHub Desktop.</li>
+<li>Open the GitHub Pages repository.</li>
+<li>Click <strong>Open in Visual Studio Code</strong>. Or select <strong>Repository &gt; Open in Visual Studio Code</strong>.</li>
+<li>In Visual Studio Code, select <strong>File &gt; New File</strong>, type <code>index.html</code>, then press <strong>Enter</strong>. This creates an index.html file in the GitHub Pages root folder.</li>
+<li>Copy and paste the example below into the index.html file in Visual Studio Code.</li>
+<li>
+<p>Update the following:</p>
+<ul>
+<li>Change the <code>&lt;title&gt;&lt;/title&gt;</code> to the title for your website.</li>
+<li>Change <code>img src=</code> to your logo. Save your logo in the <code>`images</code> folder.</li>
+<li>Change <code>alt=</code> to describe your logo. This is useful if the image does not display.</li>
+<li>Change the main content (<code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>, and <code>&lt;p&gt;</code> tags) to your own writing samples.</li>
+<li>Change the website addresses (<code>a href</code>) to your own writing samples. The <code>{target=_blank}</code> will open the link in a new tab.</li>
+</ul>
+</li>
+<li>
+<p>Save the file.</p>
+</li>
+<li>Open GitHub Desktop and select the GitHub Pages repository. You should see your changes displayed. Green highlights are new content, red highlights are removed content.</li>
+<li>In the <strong>Update</strong> field, type a name for this update. For example, <strong>Initial check-in</strong>.</li>
+<li>In the <strong>Description</strong> field, type a description for this update. For example, <strong>First check-in for the index file</strong>.</li>
+<li>Click <strong>Commit to main</strong>.</li>
+<li>Click <strong>Push origin</strong>. This pushes your changes to the GitHub repository. Wait for a few minutes, then go to your GitHub Pages website to see your changes.</li>
+</ol>
+<h2 id="index-file-example">Index File Example</h2>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Tech Words<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="nt">body</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="n">Arial</span><span class="p">,</span><span class="w"> </span><span class="n">Helvetica</span><span class="p">,</span><span class="w"> </span><span class="kc">sans-serif</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="p">.</span><span class="nc">header</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="c">/* Adds some padding */</span>
+<span class="w">            </span><span class="k">text-align</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="p">;</span><span class="w"> </span><span class="c">/* Centers the text */</span>
+<span class="w">            </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="mh">#FFFFFF</span><span class="p">;</span><span class="w"> </span><span class="c">/* A white background */</span>
+<span class="w">            </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">white</span><span class="p">;</span><span class="w"> </span><span class="c">/* White text color */</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c">/* Increase the font size of the &lt;h1&gt; element */</span>
+<span class="w">        </span><span class="p">.</span><span class="nc">header</span><span class="w"> </span><span class="nt">h1</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mi">40</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c">/* Change color on hover/mouse-over */</span>
+<span class="w">        </span><span class="p">.</span><span class="nc">navbar</span><span class="w"> </span><span class="nt">a</span><span class="p">:</span><span class="nd">hover</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#ddd</span><span class="p">;</span><span class="w"> </span><span class="c">/* Grey background color */</span>
+<span class="w">            </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">black</span><span class="p">;</span><span class="w"> </span><span class="c">/* Black text color */</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c">/* Ensure proper sizing */</span>
+<span class="w">        </span><span class="o">*</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">box-sizing</span><span class="p">:</span><span class="w"> </span><span class="kc">border-box</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c">/* Make the logo responsive to fit the device screen */</span>
+<span class="w">        </span><span class="p">.</span><span class="nc">responsive</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">max-width</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+<span class="w">            </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="p">.</span><span class="nc">footer</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span><span class="c">/* Adds some padding */</span>
+<span class="w">            </span><span class="k">text-align</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="p">;</span><span class="w"> </span><span class="c">/* Centers the text*/</span>
+<span class="w">            </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="mh">#FFFFFF</span><span class="p">;</span><span class="w"> </span><span class="c">/* A white background */</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;header&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;images/Black Elegant Modern Name Initials Monogram Logo 1a.png&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Tech Words Documentation&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;responsive&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">align</span><span class="o">=</span><span class="s">&quot;center&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Documentation Tool Examples<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>I used GitHub Pages to create a simple page with links to examples using different technical writing tools.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">br</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>MadCap Flare 2020<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Click the link to view the Morena template.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://techwords.github.io/madcap/Content/Home.htm&quot;</span> <span class="na">target</span><span class="o">=</span><span class="s">&quot;_blank&quot;</span><span class="p">&gt;</span>MadCap Flare 2020 site<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+
+        <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Material for MKDocs<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Click the link to view a Material for MKDocs site.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://techwords.github.io/mkdocs/&quot;</span> <span class="na">target</span><span class="o">=</span><span class="s">&quot;_blank&quot;</span><span class="p">&gt;</span>Material for MKDocs site<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+
+        <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>GitHub Public Repository<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Click the link to view the public GitHub repo where these sites are stored.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://github.com/techwords/techwords.github.io&quot;</span> <span class="na">target</span><span class="o">=</span><span class="s">&quot;_blank&quot;</span><span class="p">&gt;</span>GitHub Public Repository<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;/</span><span class="nt">br</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;footer&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Sites are a work in progress<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
 
 
 
