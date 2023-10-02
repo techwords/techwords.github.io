@@ -767,23 +767,37 @@
 <h1 id="download-material-for-mkdocs">Download Material for MKDocs</h1>
 <p>Installing Material for MKDocs requires Python or Docker. This guide uses Python.</p>
 <p>For more MKDocs documentation, visit <a href="https://www.mkdocs.org" target="_blank">mkdocs.org</a>.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">macOS</label><label for="__tabbed_1_2">Windows</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Windows</label><label for="__tabbed_1_2">macOS</label><label for="__tabbed_1_3">Linux</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
+<p>The following works with Windows 10 and later.</p>
 <ol>
-<li>Open the terminal.</li>
-</ol>
-</div>
-<div class="tabbed-block">
-<p>The following works with Windows 10 and 11.</p>
-<ol>
-<li>Open the command prompt. Click <strong>Start</strong>, enter <code>cmd</code>, then press <strong>Enter</strong>.</li>
-<li>Enter <code>python</code>, then press  <strong>Enter</strong>. The Microsoft Store app opens with the Python app displayed.</li>
-<li>Click <strong>Get</strong>. The latest version of Python is installed.</li>
+<li>Download the <a href="https://www.python.org/downloads/release/python-3115/" target="_blank">Python installer</a> version 3.11.5. For Windows, download <strong>Windows installer (64-bit)</strong>.</li>
+<li>Double-click the Python executable file to start the installation process.</li>
+<li>Select <strong>Add python.exe to PATH</strong>.</li>
+<li>Click <strong>Install Now</strong>.</li>
+<li>When installation is complete, click <strong>Close</strong>.</li>
 <li>Enter <code>pip install mkdocs-material</code>, then press <strong>Enter</strong>. Material for MKDocs is installed.</li>
 <li>Navigate to your project folder. Example: <code>cd /documents/material-mkdocs</code>.</li>
 <li>Enter <code>mkdocs new .</code>, then press <strong>Enter</strong>. This will create an mkdocs.yml file, a docs folder, and an index.md file in the docs folder.</li>
 </ol>
+</div>
+<div class="tabbed-block">
+<p>Coming soon</p>
+<!-- 
+1. Download the <a href="https://www.python.org/downloads/release/python-3115/">Python installer</a>{target=_blank} version 3.11.5. For macOS, download **macOS 64-bit universal2 installer**. If you are asked to allow the download, click **Allow**.
+2. Click the Downloads icon, then click the Python executable file to start the installation process.
+3. Click **Continue** until you get the software license agreement, then click **Agree**.
+4. Click **Install**, then type your password and click **Install Software**.
+5. Click **Close** to close the Install Python window. You can move this the trash.
+6. Open the terminal.
+7. Enter <code>pip install mkdocs-material</code>, then press **Enter**. Material for MKDocs is installed.
+8. Navigate to your project folder. Example: <code>cd /documents/material-mkdocs</code>.
+9. Enter <code>mkdocs new .</code>, then press **Enter**. This will create an mkdocs.yml file, a docs folder, and an index.md file in the docs folder.
+-->
+</div>
+<div class="tabbed-block">
+<p>Coming soon</p>
 </div>
 </div>
 </div>
@@ -792,7 +806,7 @@
 <ol>
 <li>Open Visual Studio Code.</li>
 <li>Select <strong>Terminal &gt; New Terminal</strong>.</li>
-<li>In the comman line, enter <strong>mkdocs serve</strong>, then press <strong>Enter</strong>. This runs the website locally.</li>
+<li>In the command line, enter <strong>mkdocs serve</strong>, then press <strong>Enter</strong>. This runs the website locally.</li>
 <li>Open a web browser, enter <code>http://127.0.0.1:8000/</code> as the URL, then press <strong>Enter</strong>. The Welcome to MKDocs website displays.</li>
 <li>In Visual Studio Code, open the Material for MKDocs <code>mkdocs.yaml</code> file. Select <strong>File &gt; Open Folder</strong>, navigate to the project folder, select the <code>mkdocs.yml</code> file, then click <strong>Open</strong>.</li>
 <li>
