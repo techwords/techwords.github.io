@@ -12,8 +12,6 @@
         <link rel="prev" href="../">
       
       
-        <link rel="next" href="../create-repository/">
-      
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.3.2">
@@ -606,8 +604,6 @@
       
         
       
-        
-      
     
     
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
@@ -661,6 +657,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Download MKDocs
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -671,26 +678,32 @@
 
       </a>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../create-repository/" class="md-nav__link">
         
-  
-  <span class="md-ellipsis">
-    Create MKDocs Repository
-  </span>
-  
 
-      </a>
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#build-a-site" class="md-nav__link">
+    Build a Site
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -723,6 +736,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#build-a-site" class="md-nav__link">
+    Build a Site
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -737,8 +765,43 @@
 
 
 <h1 id="download-material-for-mkdocs">Download Material for MKDocs</h1>
+<p>Installing Material for MKDocs requires Python or Docker. This guide uses Python.</p>
 <p>For more MKDocs documentation, visit <a href="https://www.mkdocs.org" target="_blank">mkdocs.org</a>.</p>
-<p>Steps for downloading Material for MKDocs.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">macOS</label><label for="__tabbed_1_2">Windows</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ol>
+<li>Open the terminal.</li>
+</ol>
+</div>
+<div class="tabbed-block">
+<p>The following works with Windows 10 and 11.</p>
+<ol>
+<li>Open the command prompt. Click <strong>Start</strong>, enter <code>cmd</code>, then press <strong>Enter</strong>.</li>
+<li>Enter <code>python</code>, then press  <strong>Enter</strong>. The Microsoft Store app opens with the Python app displayed.</li>
+<li>Click <strong>Get</strong>. The latest version of Python is installed.</li>
+<li>Enter <code>pip install mkdocs-material</code>, then press <strong>Enter</strong>. Material for MKDocs is installed.</li>
+<li>Navigate to your project folder. Example: <code>cd /documents/material-mkdocs</code>.</li>
+<li>Enter <code>mkdocs new .</code>, then press <strong>Enter</strong>. This will create an mkdocs.yml file, a docs folder, and an index.md file in the docs folder.</li>
+</ol>
+</div>
+</div>
+</div>
+<h2 id="build-a-site">Build a Site</h2>
+<p>After installing Material for MKDocs and creating a project, you can build a site.</p>
+<ol>
+<li>Open Visual Studio Code.</li>
+<li>Select <strong>Terminal &gt; New Terminal</strong>.</li>
+<li>In the comman line, enter <strong>mkdocs serve</strong>, then press <strong>Enter</strong>. This runs the website locally.</li>
+<li>Open a web browser, enter <code>http://127.0.0.1:8000/</code> as the URL, then press <strong>Enter</strong>. The Welcome to MKDocs website displays.</li>
+<li>In Visual Studio Code, open the Material for MKDocs <code>mkdocs.yaml</code> file. Select <strong>File &gt; Open Folder</strong>, navigate to the project folder, select the <code>mkdocs.yml</code> file, then click <strong>Open</strong>.</li>
+<li>
+<p>Add the following to the <code>mkdocs.yml</code> file. The local website should update with the Material for MKDocs theme.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">theme</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">material</span>
+</code></pre></div>
+</li>
+</ol>
 
 
 
