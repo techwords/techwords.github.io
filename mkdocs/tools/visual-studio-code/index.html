@@ -754,7 +754,25 @@
 </ol>
 </div>
 <div class="tabbed-block">
-<p>Coming soon</p>
+<p>Installing Visual Studio Code is supported on Red Hat, CentOS, and Fedora distributions.</p>
+<ol>
+<li>
+<p>Run the following script to install the key and repository.</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>rpm<span class="w"> </span>--import<span class="w"> </span>https://packages.microsoft.com/keys/microsoft.asc
+sudo<span class="w"> </span>sh<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;echo -e &quot;[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc&quot; &gt; /etc/yum.repos.d/vscode.repo&#39;</span>
+</code></pre></div>
+</li>
+<li>
+<p>Run the following to update and install the package.</p>
+<div class="highlight"><pre><span></span><code>dnf<span class="w"> </span>check-update
+sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>code
+</code></pre></div>
+<p>Or you can use <code>yum</code> on older systems.</p>
+<div class="highlight"><pre><span></span><code>yum<span class="w"> </span>check-update
+sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>code
+</code></pre></div>
+</li>
+</ol>
 </div>
 </div>
 </div>
