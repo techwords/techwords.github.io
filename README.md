@@ -1,4 +1,4 @@
-![Tech Words example website](https://techwords.github.io/images/Black%20Elegant%20Modern%20Name%20Initials%20Monogram%20Logo%201a.png)
+![Tech Words example website](images/Black%20Elegant%20Modern%20Name%20Initials%20Monogram%20Logo%201a.png)
 
 # Tech Words
 
