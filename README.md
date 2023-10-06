@@ -1,6 +1,6 @@
-![Tech Words example website](images/Black Elegant Modern Name Initials Monogram Logo 1a.png)
-
 # Tech Words
+
+![Tech Words example website](images/Black Elegant Modern Name Initials Monogram Logo 1a.png)
 
 ## Documentation Tool Examples
 
