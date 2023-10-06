@@ -8,13 +8,13 @@ This site uses GitHub Pages to create a simple page with links to examples using
 
 MKDocs helps you build a static website using Markdown and Python. Material for MKDocs is an MKDocs theme and adds some features on top of MKDocs. For sample writing content, this site walks you through the steps for creating your first MKDocs website and hosting it on GitHub Pages.
 
-[Material for MKDocs site](https://techwords.github.io/mkdocs/){target=_blank}
+[Material for MKDocs site](https://techwords.github.io/mkdocs/)
 
 ### MadCap Flare 2020
 
 Click the link to view the Morena template. This site is a work in progress.
 
-[MadCap Flare 2020 site](https://techwords.github.io/madcap/Content/Home.htm){target=_blank}
+[MadCap Flare 2020 site](https://techwords.github.io/madcap/Content/Home.htm)
 
 ### GitHub Public Repository
 
