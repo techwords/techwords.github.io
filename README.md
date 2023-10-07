@@ -17,7 +17,3 @@ MKDocs helps you build a static website using Markdown and Python. Material for 
 Click the link to view the Morena template. This site is a work in progress.
 
 [MadCap Flare 2020 site](https://techwords.github.io/madcap/Content/Home.htm)
-
-### GitHub Public Repository
-
-This is a GitHub repository where the above sites are stored.
