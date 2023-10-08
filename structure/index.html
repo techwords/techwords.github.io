@@ -588,23 +588,50 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#one-pick-one-user-type" class="md-nav__link">
-    One - Pick One User Type
+  <a href="#option-1-pick-one-user-type" class="md-nav__link">
+    Option 1: Pick One User Type
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#two-use-dita-topic-types" class="md-nav__link">
-    Two - Use DITA Topic Types
+  <a href="#option-2-use-dita-like-topic-types" class="md-nav__link">
+    Option 2: Use DITA-like Topic Types
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#three-adjusting-dita-topic-types" class="md-nav__link">
-    Three - Adjusting DITA Topic Types
+  <a href="#option-3-adjust-dita-like-topics-for-user-types" class="md-nav__link">
+    Option 3: Adjust DITA-like Topics for User Types
   </a>
+  
+    <nav class="md-nav" aria-label="Option 3: Adjust DITA-like Topics for User Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#concept-topic" class="md-nav__link">
+    Concept Topic
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-topic" class="md-nav__link">
+    Task Topic
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reference-topic" class="md-nav__link">
+    Reference Topic
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -630,30 +657,34 @@
 <li>Experienced vs Novice</li>
 <li>Skimmer vs Learner</li>
 </ul>
-<p>Documentation is expected to be usable by all of the above groups, and more. It would be insurmountable to satisfy every type of user. So the above opposing user types seem to be the most prevalent and should cover most audiences.</p>
+<p>Ideally, documentation is usable by all of the above groups, and possibly more.</p>
 <p>How does a technical writer address these types of users?</p>
-<p>The following is from the experience of one technical writer. There are many ways to overcome the challenges of technical writing for a variety of end-users.</p>
-<h2 id="one-pick-one-user-type">One - Pick One User Type</h2>
-<p>You could pick the one user type that you think is the biggest one using your documentation. While not an ideal choice, there are some situations where this is the best option.</p>
-<p>For example, you are the only technical writer and you must write for multiple products or feature releases. As the only writer, you may not have the time to write for more than one type of user. In this situation, it is best to write well for your biggest audience.</p>
-<h2 id="two-use-dita-topic-types">Two - Use DITA Topic Types</h2>
-<p>You could follow the DITA structure to create different topic types that serve a specific documentation function.</p>
+<h2 id="option-1-pick-one-user-type">Option 1: Pick One User Type</h2>
+<p>You could pick the one user type that you think is the biggest one using your documentation. Focusing on one user type is good if you must turn out a high volume of documentation in a short amount of time.</p>
+<h2 id="option-2-use-dita-like-topic-types">Option 2: Use DITA-like Topic Types</h2>
+<p>You could follow a DITA-like structure to create different topic types that serve a specific documentation function.</p>
 <ul>
 <li>Concept Topic - Introduce the feature or subject.</li>
 <li>Task Topic - Provides the steps the user must go through to accomplish a goal.</li>
 <li>Reference Topic - Supporting information for the Instruction Topic. Example: A list of all configuration settings and descriptions.</li>
 </ul>
 <p>By separating the content into topic types, experienced users can choose to skip the concept topic and go right to the task topic. Newer users can read the concept topic to get a better understanding about the feature. And technical users will benefit from the detailed information in a reference topic that covers all of the configuration settings for a product or feature.</p>
-<p>As a writer, you must be consistent with the content in each topic type so users can trust the documentation and know where to go to find what they are looking for within your documentation.</p>
-<p>One challenge is figuring out which topic to put some content into. You may run into some content that does not fit into any of these types.</p>
-<p>And while separating topic types helps experienced users find what they need, users who skim documentation may not get the information they need.</p>
-<h2 id="three-adjusting-dita-topic-types">Three - Adjusting DITA Topic Types</h2>
-<p>Take the DITA topic types and modify them to fit different user types.</p>
+<p>Strictly following a DITA structure can be challenging. Just using the topic types to organize your documentation can help your readers find what they need instead of having to read through one long topic.</p>
+<h2 id="option-3-adjust-dita-like-topics-for-user-types">Option 3: Adjust DITA-like Topics for User Types</h2>
+<p>I suggest adding structure to the DITA topic types that help specific user types.</p>
+<h3 id="concept-topic">Concept Topic</h3>
 <ul>
-<li>Concept Topic - Write a quick summary (a TL:DR) so skimmers can glance at it to understand what this set of topics is about. Use something to denote where the quick summary ends and the full concept begins. How you differentiate between the summary and the main concept is up to you and your preferences. You could add a line to visual separate the quick summary from the main concept. You could use a note format to highlight and isolate the quick summary from the rest of the topic. Or you may find a more subtle way to differentiate the quick summary from the concept for a more elegant or less intrusive solution.</li>
-<li>Task Topic - If available, use collapsible sections to hide additional information. This allows novices and learners to expand these sections to learn more, when more information is available, but keeps it hidden for users who do not need it.</li>
-<li>Reference Topic - Leave this as is. Users will read a reference topic when they need to know something specific, like what variables are allowed for a setting.</li>
+<li>Write a quick summary (a TL;DR) so skimmers can glance at it to understand what this set of topics is about. Use something to denote where the quick summary ends and the full concept begins. How you differentiate between the summary and the main concept is up to you and your preferences. You could add a line to visual separate the quick summary from the main concept. You could use a note format to highlight and isolate the quick summary from the rest of the topic. Or you may find a more subtle way to differentiate the quick summary from the concept for a more elegant or less intrusive solution.</li>
 </ul>
+<h3 id="task-topic">Task Topic</h3>
+<ul>
+<li>When possible, use collapsible sections to hide additional information. This allows novices and learners to expand these sections to learn more, when more information is available, but keeps it hidden for users who do not need it.</li>
+</ul>
+<h3 id="reference-topic">Reference Topic</h3>
+<ul>
+<li>Leave this as is. Users will read a reference topic when they need to know something specific, like what variables are allowed for a setting.</li>
+</ul>
+<p>The other pages on this site present examples of the above suggestions.</p>
 
 
 
