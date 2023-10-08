@@ -18,6 +18,12 @@ Technical and product documentation has opposing audiences to cater to. This sit
 
 [Structure](https://techwords.github.io/structure/)
 
+### Blogs
+
+Blogs are typically written in a conversational style and is used to share information, opinions, and experiences on a particular topic. This site focuses on writing techniques, tools, and processes related to technical documentation.
+
+[Blogs](https://techwords.github.io/blogs/)
+
 ### MadCap Flare 2020
 
 Click the link to view the Morena template. This site is a work in progress.
