@@ -10,7 +10,7 @@ body {
 }
 
 div {
-    max-width: 1100px;
+    max-width: 1000px;
     margin: 0 auto;
     text-align: center;
 }
@@ -49,6 +49,22 @@ div {
   background: #FFFFFF; /* white background */
 }
 
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
 </style>
 </head>
 <body>
@@ -60,28 +76,46 @@ div {
 <h1>Documentation Tool Examples</h1>
 <p>This site uses GitHub Pages to create a simple page with links to examples using different technical writing tools and some writing samples.</p>
 </br>
-<h2>Material for MKDocs</h2>
-<p>MKDocs helps you build a static website using Markdown and Python. Material for MKDocs is an MKDocs theme and adds some features on top of MKDocs. For sample writing content, this site walks you through the steps for creating your first MKDocs website and hosting it on GitHub Pages.</p>
-<a href="https://techwords.github.io/mkdocs/" target="_blank">Material for MKDocs site</a>
 
-<h2>Structure</h2>
-<p>Technical and product documentation has opposing audiences to cater to. This site demonstrates extending the DITA topic types to meet the needs of different user types.</p>
-<a href="https://techwords.github.io/structure/" target="_blank">Structure site</a>
+<h2>Documentation Tools</h2>
+<p>The following sites demonstrate different writing tools, from docs-as-code to document management systems.</p>
+<table>
+  <tr>
+    <th>Tool</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><a href="https://techwords.github.io/mkdocs/" target="_blank">Material for MKDocs site</a></td>
+    <td>MKDocs helps you build a static website using Markdown and Python. Material for MKDocs is an MKDocs theme and adds some features on top of MKDocs. For sample writing content, this site walks you through the steps for creating your first MKDocs website and hosting it on GitHub Pages.</td>
+  </tr>
+  <tr>
+    <td><a href="https://techwords.github.io/madcap/Content/Home.htm" target="_blank">MadCap Flare 2020 site</a></td>
+    <td>Click the link to view the Morena template. This site is a work in progress.</td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/techwords/techwords.github.io" target="_blank">GitHub Public Repository</a></td>
+    <td>Click the link to view the public GitHub repo where these sites are stored.</td>
+  </tr>
+</table>
+</br></br>
 
-<h2>Blogs</h2>
-<p>Blogs are typically written in a conversational style and is used to share information, opinions, and experiences on a particular topic. This site focuses on writing techniques, tools, and processes related to technical documentation.</p>
-<a href="https://techwords.github.io/blogs/" target="_blank">Blogs site</a>
-
-<h2>MadCap Flare 2020</h2>
-<p>Click the link to view the Morena template. This site is a work in progress.</p>
-<a href="https://techwords.github.io/madcap/Content/Home.htm" target="_blank">MadCap Flare 2020 site</a>
-
-<h2>GitHub Public Repository</h2>
-<p>Click the link to view the public GitHub repo where these sites are stored.</p>
-<a href="https://github.com/techwords/techwords.github.io" target="_blank">GitHub Public Repository</a>
+<h2>Technical Writing</h2>
+<p>The following sites focus on a document type or structure related to technical writing.</p>
+<table>
+  <tr>
+    <th>Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><a href="https://techwords.github.io/blogs/" target="_blank">Blogs site</a></td>
+    <td>Blogs are typically written in a conversational style and is used to share information, opinions, and experiences on a particular topic. This site focuses on writing techniques, tools, and processes related to technical documentation.</td>
+  </tr>
+  <tr>
+    <td><a href="https://techwords.github.io/structure/" target="_blank">Structure site</a></td>
+    <td>Technical and product documentation has opposing audiences to cater to. This site demonstrates extending the DITA topic types to meet the needs of different user types.</td>
+  </tr>
+</table>
+</br></br>
 </div>
-
-</br>
-
 </body>
 </html>
