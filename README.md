@@ -12,6 +12,7 @@ The following sites demonstrate different writing tools, from docs-as-code to do
 |------|-------------|
 | [Material for MKDocs site](https://techwords.github.io/mkdocs/) | MKDocs helps you build a static website using Markdown and Python. Material for MKDocs is an MKDocs theme and adds some features on top of MKDocs. For sample writing content, this site walks you through the steps for creating your first MKDocs website and hosting it on GitHub Pages. |
 | [MadCap Flare 2020 site](https://techwords.github.io/madcap/Content/Home.htm) | Click the link to view the Morena template. This site is a work in progress. |
+| [GitHub Public Repository](https://github.com/techwords/techwords.github.io) | Click the link to view the public GitHub repo where these sites are stored. |
 
 ## Technical Writing
 
