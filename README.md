@@ -21,3 +21,4 @@ The following sites focus on a document type or structure related to technical w
 |------|-------------|
 | [Blogs](https://techwords.github.io/blogs/) | Blogs are typically written in a conversational style and is used to share information, opinions, and experiences on a particular topic. This site focuses on writing techniques, tools, and processes related to technical documentation. |
 | [Structure](https://techwords.github.io/structure/) | Technical and product documentation has opposing audiences to cater to. This site demonstrates extending the DITA topic types to meet the needs of different user types. |
+| [GitHub Public Repository](https://github.com/techwords/techwords.github.io) | Click the link to view the public GitHub repo where these sites are stored. |
