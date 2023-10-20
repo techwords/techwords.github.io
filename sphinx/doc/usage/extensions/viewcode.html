@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>sphinx.ext.viewcode – Add links to highlighted source code &#8212; techwords 01 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/alabaster.css?v=039e1c02" />
+    <script src="../../../_static/documentation_options.js?v=82a30901"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-sphinx.ext.viewcode">
+<span id="sphinx-ext-viewcode-add-links-to-highlighted-source-code"></span><h1><a class="reference internal" href="#module-sphinx.ext.viewcode" title="sphinx.ext.viewcode: Add links to a highlighted version of the source code."><code class="xref py py-mod docutils literal notranslate"><span class="pre">sphinx.ext.viewcode</span></code></a> – Add links to highlighted source code<a class="headerlink" href="#module-sphinx.ext.viewcode" title="Link to this heading">¶</a></h1>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.0.</span></p>
+</div>
+<p>This extension looks at your Python object descriptions (<code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">class::</span></code>, <code class="docutils literal notranslate"><span class="pre">..</span>
+<span class="pre">function::</span></code> etc.) and tries to find the source files where the objects are
+contained.  When found, a separate HTML page will be output for each module with
+a highlighted version of the source code, and a link will be added to all object
+descriptions that leads to the source code of the described object.  A link back
+from the source to the description will also be inserted.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Basically, <code class="docutils literal notranslate"><span class="pre">viewcode</span></code> extension will import the modules being linked to.
+If any modules have side effects on import, these will be executed when
+<code class="docutils literal notranslate"><span class="pre">sphinx-build</span></code> is run.</p>
+<p>If you document scripts (as opposed to library modules), make sure their
+main routine is protected by a <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">'__main__'</span></code> condition.</p>
+<p>In addition, if you don’t want to import the modules by <code class="docutils literal notranslate"><span class="pre">viewcode</span></code>,
+you can tell the location of the location of source code to <code class="docutils literal notranslate"><span class="pre">viewcode</span></code>
+using the <a href="#id1"><span class="problematic" id="id2">:event:`viewcode-find-source`</span></a> event.</p>
+<p>If <a href="#id3"><span class="problematic" id="id4">:confval:`viewcode_follow_imported_members`</span></a> is enabled,
+you will also need to resolve imported attributes
+using the <a href="#id5"><span class="problematic" id="id6">:event:`viewcode-follow-imported`</span></a> event.</p>
+</div>
+<p>This extension works only on HTML related builders like <code class="docutils literal notranslate"><span class="pre">html</span></code>,
+<code class="docutils literal notranslate"><span class="pre">applehelp</span></code>, <code class="docutils literal notranslate"><span class="pre">devhelp</span></code>, <code class="docutils literal notranslate"><span class="pre">htmlhelp</span></code>, <code class="docutils literal notranslate"><span class="pre">qthelp</span></code> and so on except
+<code class="docutils literal notranslate"><span class="pre">singlehtml</span></code>. By default <code class="docutils literal notranslate"><span class="pre">epub</span></code> builder doesn’t
+support this extension (see <a href="#id7"><span class="problematic" id="id8">:confval:`viewcode_enable_epub`</span></a>).</p>
+<section id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Link to this heading">¶</a></h2>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../index.html">techwords</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, techwords.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="../../../_sources/doc/usage/extensions/viewcode.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

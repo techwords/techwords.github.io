@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>The WebSupport Class &#8212; techwords 01 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/alabaster.css?v=039e1c02" />
+    <script src="../../../../_static/documentation_options.js?v=82a30901"></script>
+    <script src="../../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+   
+  <link rel="stylesheet" href="../../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="the-websupport-class">
+<span id="websupportapi"></span><h1>The WebSupport Class<a class="headerlink" href="#the-websupport-class" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="sphinxcontrib.websupport.WebSupport">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sphinxcontrib.websupport.</span></span><span class="sig-name descname"><span class="pre">WebSupport</span></span><a class="headerlink" href="#sphinxcontrib.websupport.WebSupport" title="Link to this definition">¶</a></dt>
+<dd><p>The main API class for the web support package.  All interactions with the
+web support package should occur through this class.</p>
+<p>The class takes the following keyword arguments:</p>
+<dl>
+<dt>srcdir</dt><dd><p>The directory containing reStructuredText source files.</p>
+</dd>
+<dt>builddir</dt><dd><p>The directory that build data and static files should be placed in.  This
+should be used when creating a <a class="reference internal" href="#sphinxcontrib.websupport.WebSupport" title="sphinxcontrib.websupport.WebSupport"><code class="xref py py-class docutils literal notranslate"><span class="pre">WebSupport</span></code></a> object that will be
+used to build data.</p>
+</dd>
+<dt>datadir</dt><dd><p>The directory that the web support data is in.  This should be used when
+creating a <a class="reference internal" href="#sphinxcontrib.websupport.WebSupport" title="sphinxcontrib.websupport.WebSupport"><code class="xref py py-class docutils literal notranslate"><span class="pre">WebSupport</span></code></a> object that will be used to retrieve data.</p>
+</dd>
+<dt>search</dt><dd><p>This may contain either a string (e.g. ‘xapian’) referencing a built-in
+search adapter to use, or an instance of a subclass of
+<a class="reference internal" href="searchadapters.html#sphinxcontrib.websupport.search.BaseSearch" title="sphinxcontrib.websupport.search.BaseSearch"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseSearch</span></code></a>.</p>
+</dd>
+<dt>storage</dt><dd><p>This may contain either a string representing a database uri, or an
+instance of a subclass of <a class="reference internal" href="storagebackends.html#sphinxcontrib.websupport.storage.StorageBackend" title="sphinxcontrib.websupport.storage.StorageBackend"><code class="xref py py-class docutils literal notranslate"><span class="pre">StorageBackend</span></code></a>.  If this is
+not provided, a new sqlite database will be created.</p>
+</dd>
+<dt>moderation_callback</dt><dd><p>A callable to be called when a new comment is added that is not
+displayed.  It must accept one argument: a dictionary representing the
+comment that was added.</p>
+</dd>
+<dt>staticdir</dt><dd><p>If the static files should be created in a different location
+<strong>and not in</strong> <code class="docutils literal notranslate"><span class="pre">'/static'</span></code>, this should be a string with the name of
+that location (e.g. <code class="docutils literal notranslate"><span class="pre">builddir</span> <span class="pre">+</span> <span class="pre">'/static_files'</span></code>).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you specify <code class="docutils literal notranslate"><span class="pre">staticdir</span></code>, you will typically want to adjust
+<code class="docutils literal notranslate"><span class="pre">staticroot</span></code> accordingly.</p>
+</div>
+</dd>
+<dt>staticroot</dt><dd><p>If the static files are not served from <code class="docutils literal notranslate"><span class="pre">'/static'</span></code>, this should be a
+string with the name of that location (e.g. <code class="docutils literal notranslate"><span class="pre">'/static_files'</span></code>).</p>
+</dd>
+<dt>docroot</dt><dd><p>If the documentation is not served from the base path of a URL, this
+should be a string specifying that path (e.g. <code class="docutils literal notranslate"><span class="pre">'docs'</span></code>).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.6: </span>WebSupport class is moved to sphinxcontrib.websupport from sphinx.websupport.
+Please add <code class="docutils literal notranslate"><span class="pre">sphinxcontrib-websupport</span></code> package in your dependency and use
+moved class instead.</p>
+</div>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Link to this heading">¶</a></h2>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../../index.html">techwords</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, techwords.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="../../../../_sources/doc/usage/advanced/websupport/api.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

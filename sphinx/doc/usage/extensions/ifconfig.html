@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>sphinx.ext.ifconfig – Include content based on configuration &#8212; techwords 01 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/alabaster.css?v=039e1c02" />
+    <script src="../../../_static/documentation_options.js?v=82a30901"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-sphinx.ext.ifconfig">
+<span id="sphinx-ext-ifconfig-include-content-based-on-configuration"></span><h1><a class="reference internal" href="#module-sphinx.ext.ifconfig" title="sphinx.ext.ifconfig: Include documentation content based on configuration values."><code class="xref py py-mod docutils literal notranslate"><span class="pre">sphinx.ext.ifconfig</span></code></a> – Include content based on configuration<a class="headerlink" href="#module-sphinx.ext.ifconfig" title="Link to this heading">¶</a></h1>
+<p>This extension is quite simple, and features only one directive:</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This directive is designed to control only content of document.  It could
+not control sections, labels and so on.</p>
+</div>
+<dl class="rst directive">
+<dt class="sig sig-object rst" id="directive-ifconfig">
+<span class="sig-name descname"><span class="pre">..</span> <span class="pre">ifconfig::</span></span><a class="headerlink" href="#directive-ifconfig" title="Link to this definition">¶</a></dt>
+<dd><p>Include content of the directive only if the Python expression given as an
+argument is <code class="docutils literal notranslate"><span class="pre">True</span></code>, evaluated in the namespace of the project’s
+configuration (that is, all registered variables from <code class="file docutils literal notranslate"><span class="pre">conf.py</span></code> are
+available).</p>
+<p>For example, one could write</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">ifconfig</span><span class="p">::</span> releaselevel in (&#39;alpha&#39;, &#39;beta&#39;, &#39;rc&#39;)
+
+   This stuff is only included in the built docs for unstable versions.
+</pre></div>
+</div>
+<p>To make a custom config value known to Sphinx, use
+<code class="xref py py-func docutils literal notranslate"><span class="pre">add_config_value()</span></code> in the setup function in
+<code class="file docutils literal notranslate"><span class="pre">conf.py</span></code>, e.g.:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>def setup(app):
+    app.add_config_value(&#39;releaselevel&#39;, &#39;&#39;, &#39;env&#39;)
+</pre></div>
+</div>
+<p>The second argument is the default value, the third should always be
+<code class="docutils literal notranslate"><span class="pre">'env'</span></code> for such values (it selects if Sphinx re-reads the documents if the
+value changes).</p>
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../index.html">techwords</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, techwords.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="../../../_sources/doc/usage/extensions/ifconfig.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

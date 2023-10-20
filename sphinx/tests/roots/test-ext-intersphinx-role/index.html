@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>&lt;no title&gt; &#8212; techwords 01 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/alabaster.css?v=039e1c02" />
+    <script src="../../../_static/documentation_options.js?v=82a30901"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">module1</span></code> is only defined in <code class="docutils literal notranslate"><span class="pre">inv</span></code>:
+<a href="#id1"><span class="problematic" id="id2">:external:py:mod:`module1`</span></a></p></li>
+</ul>
+<ul class="simple" id="module-module2">
+<li><p><code class="docutils literal notranslate"><span class="pre">module2</span></code> is defined here and also in <code class="docutils literal notranslate"><span class="pre">inv</span></code>, but should resolve to inv:
+<a href="#id3"><span class="problematic" id="id4">:external:py:mod:`module2`</span></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">module3</span></code> is not defined anywhere, so should warn:
+<a href="#id5"><span class="problematic" id="id6">:external:py:mod:`module3`</span></a></p></li>
+</ul>
+<ul class="simple" id="module-module10">
+<li><p><code class="docutils literal notranslate"><span class="pre">module10</span></code> is only defined here, but should still not be resolved to:
+<a href="#id7"><span class="problematic" id="id8">:external:py:mod:`module10`</span></a></p></li>
+<li><p>a function in inv:
+<a href="#id9"><span class="problematic" id="id10">:external:py:func:`module1.func`</span></a></p></li>
+<li><p>a method, but with old style inventory prefix, which shouldn’t work:
+<a href="#id11"><span class="problematic" id="id12">:external:py:meth:`inv:Foo.bar`</span></a></p></li>
+<li><p>a non-existing role:
+<a href="#id13"><span class="problematic" id="id14">:external:py:nope:`something`</span></a></p></li>
+</ul>
+<ul class="simple">
+<li><p>a type where the default domain is used to find the role:
+<a href="#id15"><span class="problematic" id="id16">:external:type:`std::uint8_t`</span></a></p></li>
+<li><p>a non-existing role in default domain:
+<a href="#id17"><span class="problematic" id="id18">:external:nope:`somethingElse`</span></a></p></li>
+<li><p>two roles in <code class="docutils literal notranslate"><span class="pre">std</span></code> which can be found without a default domain:</p>
+<ul>
+<li><p><span class="xref std std-doc">docname</span></p></li>
+<li><p><code class="xref std std-option docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-l</span></code></p></li>
+</ul>
+</li>
+<li><p>a function with explicit inventory:
+<a href="#id19"><span class="problematic" id="id20">:external+inv:c:func:`CFunc`</span></a></p></li>
+<li><p>a class with explicit non-existing inventory, which also has upper-case in name:
+<a href="#id21"><span class="problematic" id="id22">:external+invNope:cpp:class:`foo::Bar`</span></a></p></li>
+<li><p>explicit title:
+<a href="#id23"><span class="problematic" id="id24">:external:cpp:type:`FoonsTitle &lt;foons&gt;`</span></a></p></li>
+</ul>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../index.html">techwords</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, techwords.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="../../../_sources/tests/roots/test-ext-intersphinx-role/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

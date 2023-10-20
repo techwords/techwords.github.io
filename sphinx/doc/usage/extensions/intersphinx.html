@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>sphinx.ext.intersphinx – Link to other projects’ documentation &#8212; techwords 01 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/alabaster.css?v=039e1c02" />
+    <script src="../../../_static/documentation_options.js?v=82a30901"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-sphinx.ext.intersphinx">
+<span id="sphinx-ext-intersphinx-link-to-other-projects-documentation"></span><h1><a class="reference internal" href="#module-sphinx.ext.intersphinx" title="sphinx.ext.intersphinx: Link to other Sphinx documentation."><code class="xref py py-mod docutils literal notranslate"><span class="pre">sphinx.ext.intersphinx</span></code></a> – Link to other projects’ documentation<a class="headerlink" href="#module-sphinx.ext.intersphinx" title="Link to this heading">¶</a></h1>
+<div class="versionadded" id="index-0">
+<p><span class="versionmodified added">New in version 0.5.</span></p>
+</div>
+<p>This extension can generate links to the documentation of objects in external
+projects, either explicitly through the <a class="reference internal" href="#role-external" title="external role"><code class="xref rst rst-role docutils literal notranslate"><span class="pre">external</span></code></a> role, or as a
+fallback resolution for any other cross-reference.</p>
+<p>Usage for fallback resolution is simple: whenever Sphinx encounters a
+cross-reference that has no matching target in the current documentation set,
+it looks for targets in the external documentation sets configured in
+<a href="#id1"><span class="problematic" id="id2">:confval:`intersphinx_mapping`</span></a>.  A reference like
+<code class="docutils literal notranslate"><span class="pre">:py:class:`zipfile.ZipFile`</span></code> can then link to the Python documentation
+for the ZipFile class, without you having to specify where it is located
+exactly.</p>
+<p>When using the <a class="reference internal" href="#role-external" title="external role"><code class="xref rst rst-role docutils literal notranslate"><span class="pre">external</span></code></a> role, you can force lookup to any external
+projects, and optionally to a specific external project.
+A link like <code class="docutils literal notranslate"><span class="pre">:external:ref:`comparison</span> <span class="pre">manual</span> <span class="pre">&lt;comparisons&gt;`</span></code> will then link
+to the label “comparisons” in whichever configured external project, if it
+exists,
+and a link like <code class="docutils literal notranslate"><span class="pre">:external+python:ref:`comparison</span> <span class="pre">manual</span> <span class="pre">&lt;comparisons&gt;`</span></code> will
+link to the label “comparisons” only in the doc set “python”, if it exists.</p>
+<p>Behind the scenes, this works as follows:</p>
+<ul class="simple">
+<li><p>Each Sphinx HTML build creates a file named <code class="file docutils literal notranslate"><span class="pre">objects.inv</span></code> that contains
+a mapping from object names to URIs relative to the HTML set’s root.</p></li>
+<li><p>Projects using the Intersphinx extension can specify the location of such
+mapping files in the <a href="#id3"><span class="problematic" id="id4">:confval:`intersphinx_mapping`</span></a> config value.  The mapping
+will then be used to resolve both <a class="reference internal" href="#role-external" title="external role"><code class="xref rst rst-role docutils literal notranslate"><span class="pre">external</span></code></a> references, and also
+otherwise missing references to objects into links to the other documentation.</p></li>
+<li><p>By default, the mapping file is assumed to be at the same location as the rest
+of the documentation; however, the location of the mapping file can also be
+specified individually, e.g. if the docs should be buildable without Internet
+access.</p></li>
+</ul>
+<section id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Link to this heading">¶</a></h2>
+<p>To use Intersphinx linking, add <code class="docutils literal notranslate"><span class="pre">'sphinx.ext.intersphinx'</span></code> to your
+<a href="#id5"><span class="problematic" id="id6">:confval:`extensions`</span></a> config value, and use these config values to activate
+linking:</p>
+</section>
+<section id="explicitly-reference-external-objects">
+<h2>Explicitly Reference External Objects<a class="headerlink" href="#explicitly-reference-external-objects" title="Link to this heading">¶</a></h2>
+<p>The Intersphinx extension provides the following role.</p>
+<dl class="rst role">
+<dt class="sig sig-object rst" id="role-external">
+<span class="sig-name descname"><span class="pre">:external:</span></span><a class="headerlink" href="#role-external" title="Link to this definition">¶</a></dt>
+<dd><div class="versionadded">
+<p><span class="versionmodified added">New in version 4.4.</span></p>
+</div>
+<p>Use Intersphinx to perform lookup only in external projects, and not the
+current project. Intersphinx still needs to know the type of object you
+would like to find, so the general form of this role is to write the
+cross-refererence as if the object is in the current project, but then prefix
+it with <code class="docutils literal notranslate"><span class="pre">:external</span></code>.
+The two forms are then</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">:external:domain:reftype:`target`</span></code>,
+e.g., <code class="docutils literal notranslate"><span class="pre">:external:py:class:`zipfile.ZipFile`</span></code>, or</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:external:reftype:`target`</span></code>,
+e.g., <code class="docutils literal notranslate"><span class="pre">:external:doc:`installation`</span></code>.</p></li>
+</ul>
+<p>If you would like to constrain the lookup to a specific external project,
+then the key of the project, as specified in <a href="#id7"><span class="problematic" id="id8">:confval:`intersphinx_mapping`</span></a>,
+is added as well to get the two forms</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">:external+invname:domain:reftype:`target`</span></code>,
+e.g., <code class="docutils literal notranslate"><span class="pre">:external+python:py:class:`zipfile.ZipFile`</span></code>, or</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:external+invname:reftype:`target`</span></code>,
+e.g., <code class="docutils literal notranslate"><span class="pre">:external+python:doc:`installation`</span></code>.</p></li>
+</ul>
+</dd></dl>
+
+</section>
+<section id="showing-all-links-of-an-intersphinx-mapping-file">
+<h2>Showing all links of an Intersphinx mapping file<a class="headerlink" href="#showing-all-links-of-an-intersphinx-mapping-file" title="Link to this heading">¶</a></h2>
+<p>To show all Intersphinx links and their targets of an Intersphinx mapping file,
+run <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-msphinx.ext.intersphinx</span> <span class="pre">url-or-path</span></code>.  This is helpful when
+searching for the root cause of a broken Intersphinx link in a documentation
+project. The following example prints the Intersphinx mapping of the Python 3
+documentation:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python -m sphinx.ext.intersphinx https://docs.python.org/3/objects.inv
+</pre></div>
+</div>
+</section>
+<section id="using-intersphinx-with-inventory-file-under-basic-authorization">
+<h2>Using Intersphinx with inventory file under Basic Authorization<a class="headerlink" href="#using-intersphinx-with-inventory-file-under-basic-authorization" title="Link to this heading">¶</a></h2>
+<p>Intersphinx supports Basic Authorization like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">intersphinx_mapping</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;python&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;https://user:password@docs.python.org/3&#39;</span><span class="p">,</span>
+                                  <span class="kc">None</span><span class="p">)}</span>
+</pre></div>
+</div>
+<p>The user and password will be stripped from the URL when generating the links.</p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../index.html">techwords</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, techwords.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="../../../_sources/doc/usage/extensions/intersphinx.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

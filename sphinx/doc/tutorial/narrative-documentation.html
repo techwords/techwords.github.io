@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Narrative documentation in Sphinx &#8212; techwords 01 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=039e1c02" />
+    <script src="../../_static/documentation_options.js?v=82a30901"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="narrative-documentation-in-sphinx">
+<h1>Narrative documentation in Sphinx<a class="headerlink" href="#narrative-documentation-in-sphinx" title="Link to this heading">¶</a></h1>
+<section id="structuring-your-documentation-across-multiple-pages">
+<h2>Structuring your documentation across multiple pages<a class="headerlink" href="#structuring-your-documentation-across-multiple-pages" title="Link to this heading">¶</a></h2>
+<p>The file <code class="docutils literal notranslate"><span class="pre">index.rst</span></code> created by <code class="docutils literal notranslate"><span class="pre">sphinx-quickstart</span></code> is the <a class="reference internal" href="../glossary.html#term-root-document"><span class="xref std std-term">root
+document</span></a>, whose main function is to serve as a welcome page and to contain the
+root of the “table of contents tree” (or <em>toctree</em>).  Sphinx allows you to
+assemble a project from different files, which is helpful when the project
+grows.</p>
+<p>As an example, create a new file <code class="docutils literal notranslate"><span class="pre">docs/source/usage.rst</span></code> (next to
+<code class="docutils literal notranslate"><span class="pre">index.rst</span></code>) with these contents:</p>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">docs/source/usage.rst</span><a class="headerlink" href="#id3" title="Link to this code">¶</a></div>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="gh">Usage</span>
+<span class="gh">=====</span>
+
+<span class="gh">Installation</span>
+<span class="gh">------------</span>
+
+To use Lumache, first install it using pip:
+
+<span class="p">..</span> <span class="ow">code-block</span><span class="p">::</span> console
+
+   (.venv) $ pip install lumache
+</pre></div>
+</div>
+</div>
+<p>This new file contains two <a class="reference internal" href="../usage/restructuredtext/basics.html#rst-sections"><span class="std std-ref">section</span></a> headers, normal
+paragraph text, and a <a class="reference internal" href="../usage/restructuredtext/directives.html#directive-code-block" title="code-block directive"><code class="xref rst rst-dir docutils literal notranslate"><span class="pre">code-block</span></code></a> directive that renders
+a block of content as source code, with appropriate syntax highlighting
+(in this case, generic <code class="docutils literal notranslate"><span class="pre">console</span></code> text).</p>
+<p>The structure of the document is determined by the succession of heading
+styles, which means that, by using <code class="docutils literal notranslate"><span class="pre">---</span></code> for the “Installation” section
+after <code class="docutils literal notranslate"><span class="pre">===</span></code> for the “Usage” section, you have declared “Installation” to
+be a <em>subsection</em> of “Usage”.</p>
+<p>To complete the process, add a <code class="docutils literal notranslate"><span class="pre">toctree</span></code> <a class="reference internal" href="../usage/restructuredtext/basics.html#rst-directives"><span class="std std-ref">directive</span></a> at
+the end of <code class="docutils literal notranslate"><span class="pre">index.rst</span></code> including the document you just created, as follows:</p>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">docs/source/index.rst</span><a class="headerlink" href="#id4" title="Link to this code">¶</a></div>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="gh">Contents</span>
+<span class="gh">--------</span>
+
+<span class="p">..</span> <span class="ow">toctree</span><span class="p">::</span>
+
+   usage
+</pre></div>
+</div>
+</div>
+<p>This step inserts that document in the root of the <em>toctree</em>, so now it belongs
+to the structure of your project, which so far looks like this:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>index
+└── usage
+</pre></div>
+</div>
+<p>If you build the HTML documentation running <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span></code>, you will see
+that the <code class="docutils literal notranslate"><span class="pre">toctree</span></code> gets rendered as a list of hyperlinks, and this allows you
+to navigate to the new page you just created.  Neat!</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Documents outside a <em>toctree</em> will result in <code class="docutils literal notranslate"><span class="pre">WARNING:</span> <span class="pre">document</span> <span class="pre">isn't</span>
+<span class="pre">included</span> <span class="pre">in</span> <span class="pre">any</span> <span class="pre">toctree</span></code> messages during the build process, and will be
+unreachable for users.</p>
+</div>
+</section>
+<section id="adding-cross-references">
+<h2>Adding cross-references<a class="headerlink" href="#adding-cross-references" title="Link to this heading">¶</a></h2>
+<p>One powerful feature of Sphinx is the ability to seamlessly add
+<a class="reference internal" href="../usage/restructuredtext/roles.html#xref-syntax"><span class="std std-ref">cross-references</span></a> to specific parts of the documentation:
+a document, a section, a figure, a code object, etc.  This tutorial is full of
+them!</p>
+<p>To add a cross-reference, write this sentence right after the
+introduction paragraph in <code class="docutils literal notranslate"><span class="pre">index.rst</span></code>:</p>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">docs/source/index.rst</span><a class="headerlink" href="#id5" title="Link to this code">¶</a></div>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span>Check out the <span class="na">:doc:</span><span class="nv">`usage`</span> section for further information.
+</pre></div>
+</div>
+</div>
+<p>The <a class="reference internal" href="../usage/restructuredtext/roles.html#role-doc" title="doc role"><code class="xref rst rst-role docutils literal notranslate"><span class="pre">doc</span></code></a> <a class="reference internal" href="../usage/restructuredtext/basics.html#rst-roles-alt"><span class="std std-ref">role</span></a> you used automatically
+references a specific document in the project, in this case the <code class="docutils literal notranslate"><span class="pre">usage.rst</span></code>
+you created earlier.</p>
+<p>Alternatively, you can also add a cross-reference to an arbitrary part of the
+project. For that, you need to use the <a class="reference internal" href="../usage/restructuredtext/roles.html#role-ref" title="ref role"><code class="xref rst rst-role docutils literal notranslate"><span class="pre">ref</span></code></a> role, and add an
+explicit <em>label</em> that acts as <a href="#id1"><span class="problematic" id="id2">:duref:`a target &lt;hyperlink-targets&gt;`</span></a>.</p>
+<p>For example, to reference the “Installation” subsection, add a label right
+before the heading, as follows:</p>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text">docs/source/usage.rst</span><a class="headerlink" href="#id6" title="Link to this code">¶</a></div>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="gh">Usage</span>
+<span class="gh">=====</span>
+
+<span class="hll"><span class="p">..</span> <span class="nt">_installation:</span>
+</span>
+<span class="gh">Installation</span>
+<span class="gh">------------</span>
+
+<span class="cp">...</span>
+</pre></div>
+</div>
+</div>
+<p>And make the sentence you added in <code class="docutils literal notranslate"><span class="pre">index.rst</span></code> look like this:</p>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text">docs/source/index.rst</span><a class="headerlink" href="#id7" title="Link to this code">¶</a></div>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span>Check out the <span class="na">:doc:</span><span class="nv">`usage`</span> section for further information, including how to
+<span class="na">:ref:</span><span class="nv">`install &lt;installation&gt;`</span> the project.
+</pre></div>
+</div>
+</div>
+<p>Notice a trick here: the <code class="docutils literal notranslate"><span class="pre">install</span></code> part specifies how the link will look like
+(we want it to be a specific word, so the sentence makes sense), whereas the
+<code class="docutils literal notranslate"><span class="pre">&lt;installation&gt;</span></code> part refers to the actual label we want to add a
+cross-reference to. If you do not include an explicit title, hence using
+<code class="docutils literal notranslate"><span class="pre">:ref:`installation`</span></code>, the section title will be used (in this case,
+<code class="docutils literal notranslate"><span class="pre">Installation</span></code>). Both the <code class="docutils literal notranslate"><span class="pre">:doc:</span></code> and the <code class="docutils literal notranslate"><span class="pre">:ref:</span></code> roles will be rendered
+as hyperlinks in the HTML documentation.</p>
+<p>What about <span class="xref std std-doc">documenting code objects in Sphinx</span>?
+Read on!</p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">techwords</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, techwords.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="../../_sources/doc/tutorial/narrative-documentation.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>The Standard Domain &#8212; techwords 01 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/alabaster.css?v=039e1c02" />
+    <script src="../../../_static/documentation_options.js?v=82a30901"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="the-standard-domain">
+<h1>The Standard Domain<a class="headerlink" href="#the-standard-domain" title="Link to this heading">¶</a></h1>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.0.</span></p>
+</div>
+<p>The so-called “standard” domain collects all markup that doesn’t warrant a
+domain of its own.  Its directives and roles are not prefixed with a domain
+name.</p>
+<p>The standard domain is also where custom object descriptions, added using the
+<code class="xref py py-func docutils literal notranslate"><span class="pre">add_object_type()</span></code> API, are placed.</p>
+<p>There is a set of directives allowing documenting command-line programs:</p>
+<dl class="rst directive">
+<dt class="sig sig-object rst" id="directive-option">
+<span class="sig-name descname"><span class="pre">..</span> <span class="pre">option::</span></span><span class="sig-prename descclassname"> <span class="pre">name</span> <span class="pre">args,</span> <span class="pre">name</span> <span class="pre">args,</span> <span class="pre">...</span></span><a class="headerlink" href="#directive-option" title="Link to this definition">¶</a></dt>
+<dd><p>Describes a command line argument or switch.  Option argument names should
+be enclosed in angle brackets.  Examples:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">option</span><span class="p">::</span> dest_dir
+
+   Destination directory.
+
+<span class="p">..</span> <span class="ow">option</span><span class="p">::</span> -m &lt;module&gt;, --module &lt;module&gt;
+
+   Run a module as a script.
+</pre></div>
+</div>
+<p>The directive will create cross-reference targets for the given options,
+referenceable by <a class="reference internal" href="../restructuredtext/roles.html#role-option" title="option role"><code class="xref rst rst-role docutils literal notranslate"><span class="pre">option</span></code></a> (in the example case, you’d use something
+like <code class="docutils literal notranslate"><span class="pre">:option:`dest_dir`</span></code>, <code class="docutils literal notranslate"><span class="pre">:option:`-m`</span></code>, or <code class="docutils literal notranslate"><span class="pre">:option:`--module`</span></code>).</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 5.3: </span>One can cross-reference including an option value: <code class="docutils literal notranslate"><span class="pre">:option:`--module=foobar`</span></code>,
+,``:option:<cite>–module[=foobar]``</cite> or <code class="docutils literal notranslate"><span class="pre">:option:`--module</span> <span class="pre">foobar`</span></code>.</p>
+</div>
+<p>Use <a href="#id1"><span class="problematic" id="id2">:confval:`option_emphasise_placeholders`</span></a> for parsing of
+“variable part” of a literal text (similarly to the <a class="reference internal" href="../restructuredtext/roles.html#role-samp" title="samp role"><code class="xref rst rst-role docutils literal notranslate"><span class="pre">samp</span></code></a> role).</p>
+<p><code class="docutils literal notranslate"><span class="pre">cmdoption</span></code> directive is a deprecated alias for the <code class="docutils literal notranslate"><span class="pre">option</span></code> directive.</p>
+</dd></dl>
+
+<dl class="rst directive">
+<dt class="sig sig-object rst" id="directive-envvar">
+<span class="sig-name descname"><span class="pre">..</span> <span class="pre">envvar::</span></span><span class="sig-prename descclassname"> <span class="pre">name</span></span><a class="headerlink" href="#directive-envvar" title="Link to this definition">¶</a></dt>
+<dd><p>Describes an environment variable that the documented code or program uses
+or defines.  Referenceable by <a class="reference internal" href="../restructuredtext/roles.html#role-envvar" title="envvar role"><code class="xref rst rst-role docutils literal notranslate"><span class="pre">envvar</span></code></a>.</p>
+</dd></dl>
+
+<dl class="rst directive">
+<dt class="sig sig-object rst" id="directive-program">
+<span class="sig-name descname"><span class="pre">..</span> <span class="pre">program::</span></span><span class="sig-prename descclassname"> <span class="pre">name</span></span><a class="headerlink" href="#directive-program" title="Link to this definition">¶</a></dt>
+<dd><p>Like <a class="reference internal" href="python.html#directive-py-currentmodule" title="py:currentmodule directive"><code class="xref rst rst-dir docutils literal notranslate"><span class="pre">py:currentmodule</span></code></a>, this directive produces no output.
+Instead, it serves to notify Sphinx that all following <a class="reference internal" href="#directive-option" title="option directive"><code class="xref rst rst-dir docutils literal notranslate"><span class="pre">option</span></code></a>
+directives document options for the program called <em>name</em>.</p>
+<p>If you use <a class="reference internal" href="#directive-program" title="program directive"><code class="xref rst rst-dir docutils literal notranslate"><span class="pre">program</span></code></a>, you have to qualify the references in your
+<a class="reference internal" href="../restructuredtext/roles.html#role-option" title="option role"><code class="xref rst rst-role docutils literal notranslate"><span class="pre">option</span></code></a> roles by the program name, so if you have the following
+situation</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">program</span><span class="p">::</span> rm
+
+<span class="p">..</span> <span class="ow">option</span><span class="p">::</span> -r
+
+   Work recursively.
+
+<span class="p">..</span> <span class="ow">program</span><span class="p">::</span> svn
+
+<span class="p">..</span> <span class="ow">option</span><span class="p">::</span> -r &lt;revision&gt;
+
+   Specify the revision to work upon.
+</pre></div>
+</div>
+<p>then <code class="docutils literal notranslate"><span class="pre">:option:`rm</span> <span class="pre">-r`</span></code> would refer to the first option, while
+<code class="docutils literal notranslate"><span class="pre">:option:`svn</span> <span class="pre">-r`</span></code> would refer to the second one.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">None</span></code> is passed to the argument, the directive will reset the
+current program name.</p>
+<p>The program name may contain spaces (in case you want to document
+subcommands like <code class="docutils literal notranslate"><span class="pre">svn</span> <span class="pre">add</span></code> and <code class="docutils literal notranslate"><span class="pre">svn</span> <span class="pre">commit</span></code> separately).</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 0.5.</span></p>
+</div>
+</dd></dl>
+
+<p>There is also a very generic object description directive, which is not tied to
+any domain:</p>
+<dl class="rst directive">
+<dt class="sig sig-object rst" id="directive-describe">
+<span class="sig-name descname"><span class="pre">..</span> <span class="pre">describe::</span></span><span class="sig-prename descclassname"> <span class="pre">text</span></span><a class="headerlink" href="#directive-describe" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object rst" id="directive-object">
+<span class="sig-name descname"><span class="pre">..</span> <span class="pre">object::</span></span><span class="sig-prename descclassname"> <span class="pre">text</span></span><a class="headerlink" href="#directive-object" title="Link to this definition">¶</a></dt>
+<dd><p>This directive produces the same formatting as the specific ones provided by
+domains, but does not create index entries or cross-referencing targets.
+Example:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">describe</span><span class="p">::</span> PAPER
+
+   You can set this variable to select a paper size.
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../index.html">techwords</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, techwords.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="../../../_sources/doc/usage/domains/standard.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

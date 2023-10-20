@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Build environment API &#8212; techwords 01 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=039e1c02" />
+    <script src="../../_static/documentation_options.js?v=82a30901"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-sphinx.environment">
+<span id="build-environment-api"></span><h1>Build environment API<a class="headerlink" href="#module-sphinx.environment" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="sphinx.environment.BuildEnvironment">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sphinx.environment.</span></span><span class="sig-name descname"><span class="pre">BuildEnvironment</span></span><a class="headerlink" href="#sphinx.environment.BuildEnvironment" title="Link to this definition">¶</a></dt>
+<dd><p><strong>Attributes</strong></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sphinx.environment.BuildEnvironment.app">
+<span class="sig-name descname"><span class="pre">app</span></span><a class="headerlink" href="#sphinx.environment.BuildEnvironment.app" title="Link to this definition">¶</a></dt>
+<dd><p>Reference to the <a class="reference internal" href="appapi.html#sphinx.application.Sphinx" title="sphinx.application.Sphinx"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sphinx</span></code></a> (application) object.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sphinx.environment.BuildEnvironment.config">
+<span class="sig-name descname"><span class="pre">config</span></span><a class="headerlink" href="#sphinx.environment.BuildEnvironment.config" title="Link to this definition">¶</a></dt>
+<dd><p>Reference to the <code class="xref py py-class docutils literal notranslate"><span class="pre">Config</span></code> object.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sphinx.environment.BuildEnvironment.project">
+<span class="sig-name descname"><span class="pre">project</span></span><a class="headerlink" href="#sphinx.environment.BuildEnvironment.project" title="Link to this definition">¶</a></dt>
+<dd><p>Target project.  See <code class="xref py py-class docutils literal notranslate"><span class="pre">Project</span></code>.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sphinx.environment.BuildEnvironment.srcdir">
+<span class="sig-name descname"><span class="pre">srcdir</span></span><a class="headerlink" href="#sphinx.environment.BuildEnvironment.srcdir" title="Link to this definition">¶</a></dt>
+<dd><p>Source directory.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sphinx.environment.BuildEnvironment.doctreedir">
+<span class="sig-name descname"><span class="pre">doctreedir</span></span><a class="headerlink" href="#sphinx.environment.BuildEnvironment.doctreedir" title="Link to this definition">¶</a></dt>
+<dd><p>Directory for storing pickled doctrees.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sphinx.environment.BuildEnvironment.events">
+<span class="sig-name descname"><span class="pre">events</span></span><a class="headerlink" href="#sphinx.environment.BuildEnvironment.events" title="Link to this definition">¶</a></dt>
+<dd><p>An <code class="xref py py-class docutils literal notranslate"><span class="pre">EventManager</span></code> object.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sphinx.environment.BuildEnvironment.found_docs">
+<span class="sig-name descname"><span class="pre">found_docs</span></span><a class="headerlink" href="#sphinx.environment.BuildEnvironment.found_docs" title="Link to this definition">¶</a></dt>
+<dd><p>A set of all existing docnames.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sphinx.environment.BuildEnvironment.metadata">
+<span class="sig-name descname"><span class="pre">metadata</span></span><a class="headerlink" href="#sphinx.environment.BuildEnvironment.metadata" title="Link to this definition">¶</a></dt>
+<dd><p>Dictionary mapping docnames to “metadata” (see <a class="reference internal" href="../usage/restructuredtext/field-lists.html#metadata"><span class="std std-ref">File-wide metadata</span></a>).</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sphinx.environment.BuildEnvironment.titles">
+<span class="sig-name descname"><span class="pre">titles</span></span><a class="headerlink" href="#sphinx.environment.BuildEnvironment.titles" title="Link to this definition">¶</a></dt>
+<dd><p>Dictionary mapping docnames to the docutils node for their main title.</p>
+</dd></dl>
+
+<p><strong>Utility methods</strong></p>
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">techwords</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, techwords.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="../../_sources/doc/extdev/envapi.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

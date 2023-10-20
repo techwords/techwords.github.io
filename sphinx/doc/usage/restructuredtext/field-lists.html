@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Field Lists &#8212; techwords 01 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/alabaster.css?v=039e1c02" />
+    <script src="../../../_static/documentation_options.js?v=82a30901"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="field-lists">
+<h1>Field Lists<a class="headerlink" href="#field-lists" title="Link to this heading">¶</a></h1>
+<p><a class="reference internal" href="basics.html#rst-field-lists"><span class="std std-ref">As previously discussed</span></a>, field lists are sequences of
+fields marked up like this:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="nc">:fieldname:</span> Field content
+</pre></div>
+</div>
+<p>Sphinx extends standard docutils behavior for field lists and adds some extra
+functionality that is covered in this section.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The values of field lists will be parsed as
+strings. You cannot use Python collections such as lists or dictionaries.</p>
+</div>
+<section id="file-wide-metadata">
+<span id="metadata"></span><h2>File-wide metadata<a class="headerlink" href="#file-wide-metadata" title="Link to this heading">¶</a></h2>
+<p>A field list near the top of a file is normally parsed by docutils as the
+<em>docinfo</em> and shown on the page.  However, in Sphinx, a field list preceding
+any other markup is moved from the <em>docinfo</em> to the Sphinx environment as
+document metadata, and is not displayed in the output.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A field list appearing after the document title <em>will</em> be part of the
+<em>docinfo</em> as normal and will be displayed in the output.</p>
+</div>
+</section>
+<section id="special-metadata-fields">
+<h2>Special metadata fields<a class="headerlink" href="#special-metadata-fields" title="Link to this heading">¶</a></h2>
+<p>Sphinx provides custom behavior for bibliographic fields compared to docutils.</p>
+<p>At the moment, these metadata fields are recognized:</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">tocdepth</span></code></dt><dd><p>The maximum depth for a table of contents of this file.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="nc">:tocdepth:</span> 2
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This metadata effects to the depth of local toctree.  But it does not
+effect to the depth of <em>global</em> toctree.  So this would not be change
+the sidebar of some themes which uses global one.</p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 0.4.</span></p>
+</div>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">nocomments</span></code></dt><dd><p>If set, the web application won’t display a comment form for a page
+generated from this source file.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="nc">:nocomments:</span>
+</pre></div>
+</div>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">orphan</span></code></dt><dd><p>If set, warnings about this file not being included in any toctree will be
+suppressed.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="nc">:orphan:</span>
+</pre></div>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.0.</span></p>
+</div>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">nosearch</span></code></dt><dd><p>If set, full text search for this file is disabled.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="nc">:nosearch:</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>object search is still available even if <cite>nosearch</cite> option is set.</p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 3.0.</span></p>
+</div>
+</dd>
+</dl>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../index.html">techwords</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, techwords.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="../../../_sources/doc/usage/restructuredtext/field-lists.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

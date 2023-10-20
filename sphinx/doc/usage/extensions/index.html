@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Extensions &#8212; techwords 01 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/alabaster.css?v=039e1c02" />
+    <script src="../../../_static/documentation_options.js?v=82a30901"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="extensions">
+<h1>Extensions<a class="headerlink" href="#extensions" title="Link to this heading">¶</a></h1>
+<p>Since many projects will need special features in their documentation, Sphinx
+allows adding “extensions” to the build process, each of which can modify
+almost any aspect of document processing.</p>
+<p>This chapter describes the extensions bundled with Sphinx.  For the API
+documentation on writing your own extension, refer to <a class="reference internal" href="../../extdev/index.html#dev-extensions"><span class="std std-ref">Sphinx Extensions API</span></a>.</p>
+<section id="built-in-extensions">
+<span id="builtin-extensions"></span><h2>Built-in extensions<a class="headerlink" href="#built-in-extensions" title="Link to this heading">¶</a></h2>
+<p>These extensions are built in and can be activated by respective entries in the
+<a href="#id1"><span class="problematic" id="id2">:confval:`extensions`</span></a> configuration value:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="autodoc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sphinx.ext.autodoc</span></code> – Include documentation from docstrings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="autosectionlabel.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sphinx.ext.autosectionlabel</span></code> – Allow reference sections using its title</a></li>
+<li class="toctree-l1"><a class="reference internal" href="autosummary.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sphinx.ext.autosummary</span></code> – Generate autodoc summaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="coverage.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sphinx.ext.coverage</span></code> – Collect doc coverage stats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doctest.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sphinx.ext.doctest</span></code> – Test snippets in the documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="duration.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sphinx.ext.duration</span></code> – Measure durations of Sphinx processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extlinks.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sphinx.ext.extlinks</span></code> – Markup to shorten external links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="githubpages.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sphinx.ext.githubpages</span></code> – Publish HTML docs in GitHub Pages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="graphviz.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sphinx.ext.graphviz</span></code> – Add Graphviz graphs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ifconfig.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sphinx.ext.ifconfig</span></code> – Include content based on configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="imgconverter.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sphinx.ext.imgconverter</span></code> – A reference image converter using Imagemagick</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inheritance.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sphinx.ext.inheritance_diagram</span></code> – Include inheritance diagrams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intersphinx.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sphinx.ext.intersphinx</span></code> – Link to other projects’ documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linkcode.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sphinx.ext.linkcode</span></code> – Add external links to source code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="math.html">Math support for HTML outputs in Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="napoleon.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sphinx.ext.napoleon</span></code> – Support for NumPy and Google style docstrings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="todo.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sphinx.ext.todo</span></code> – Support for todo items</a></li>
+<li class="toctree-l1"><a class="reference internal" href="viewcode.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sphinx.ext.viewcode</span></code> – Add links to highlighted source code</a></li>
+</ul>
+</div>
+</section>
+<section id="third-party-extensions">
+<span id="id3"></span><h2>Third-party extensions<a class="headerlink" href="#third-party-extensions" title="Link to this heading">¶</a></h2>
+<p>You can find several extensions contributed by users in the <a class="reference external" href="https://github.com/sphinx-contrib/">sphinx-contrib</a>
+organization. If you wish to include your extension in this organization,
+simply follow the instructions provided in the <a class="reference external" href="https://github.com/sphinx-contrib/github-administration">github-administration</a>
+project. This is optional and there are several extensions hosted elsewhere.
+The <a class="reference external" href="https://github.com/yoloseem/awesome-sphinxdoc">awesome-sphinxdoc</a> and <a class="reference external" href="https://sphinx-extensions.readthedocs.io/en/latest/">sphinx-extensions</a> projects are both curated
+lists of Sphinx packages, and many packages use the
+<a class="reference external" href="https://pypi.org/search/?c=Framework+%3A%3A+Sphinx+%3A%3A+Extension">Framework :: Sphinx :: Extension</a> and
+<a class="reference external" href="https://pypi.org/search/?c=Framework+%3A%3A+Sphinx+%3A%3A+Theme">Framework :: Sphinx :: Theme</a> trove classifiers for Sphinx extensions and
+themes, respectively.</p>
+<section id="where-to-put-your-own-extensions">
+<h3>Where to put your own extensions?<a class="headerlink" href="#where-to-put-your-own-extensions" title="Link to this heading">¶</a></h3>
+<p>Extensions local to a project should be put within the project’s directory
+structure.  Set Python’s module search path, <code class="docutils literal notranslate"><span class="pre">sys.path</span></code>, accordingly so that
+Sphinx can find them.  For example, if your extension <code class="docutils literal notranslate"><span class="pre">foo.py</span></code> lies in the
+<code class="docutils literal notranslate"><span class="pre">exts</span></code> subdirectory of the project root, put into <code class="file docutils literal notranslate"><span class="pre">conf.py</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">os</span>
+
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;exts&#39;</span><span class="p">))</span>
+
+<span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;foo&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>You can also install extensions anywhere else on <code class="docutils literal notranslate"><span class="pre">sys.path</span></code>, e.g. in the
+<code class="docutils literal notranslate"><span class="pre">site-packages</span></code> directory.</p>
+</section>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../index.html">techwords</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, techwords.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="../../../_sources/doc/usage/extensions/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

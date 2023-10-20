@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>The reStructuredText Domain &#8212; techwords 01 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/alabaster.css?v=039e1c02" />
+    <script src="../../../_static/documentation_options.js?v=82a30901"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="the-restructuredtext-domain">
+<h1>The reStructuredText Domain<a class="headerlink" href="#the-restructuredtext-domain" title="Link to this heading">¶</a></h1>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.0.</span></p>
+</div>
+<p>The reStructuredText domain (name <strong>rst</strong>) provides the following directives:</p>
+<dl class="rst directive">
+<dt class="sig sig-object rst" id="directive-rst-directive">
+<span class="sig-name descname"><span class="pre">..</span> <span class="pre">rst:directive::</span></span><span class="sig-prename descclassname"> <span class="pre">name</span></span><a class="headerlink" href="#directive-rst-directive" title="Link to this definition">¶</a></dt>
+<dd><p>Describes a reST directive.  The <em>name</em> can be a single directive name or
+actual directive syntax (<cite>..</cite> prefix and <cite>::</cite> suffix) with arguments that
+will be rendered differently.  For example:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">rst:directive</span><span class="p">::</span> foo
+
+   Foo description.
+
+<span class="p">..</span> <span class="ow">rst:directive</span><span class="p">::</span> .. bar:: baz
+
+   Bar description.
+</pre></div>
+</div>
+<p>will be rendered as:</p>
+<dl class="rst directive">
+<dt class="sig sig-object rst" id="directive-foo">
+<span class="sig-name descname"><span class="pre">..</span> <span class="pre">foo::</span></span><a class="headerlink" href="#directive-foo" title="Link to this definition">¶</a></dt>
+<dd><p>Foo description.</p>
+</dd></dl>
+
+<dl class="rst directive">
+<dt class="sig sig-object rst" id="directive-bar">
+<span class="sig-name descname"><span class="pre">..</span> <span class="pre">bar::</span></span><span class="sig-prename descclassname"> <span class="pre">baz</span></span><a class="headerlink" href="#directive-bar" title="Link to this definition">¶</a></dt>
+<dd><p>Bar description.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="rst directive">
+<dt class="sig sig-object rst" id="directive-rst-directive-option">
+<span class="sig-name descname"><span class="pre">..</span> <span class="pre">rst:directive:option::</span></span><span class="sig-prename descclassname"> <span class="pre">name</span></span><a class="headerlink" href="#directive-rst-directive-option" title="Link to this definition">¶</a></dt>
+<dd><p>Describes an option for reST directive.  The <em>name</em> can be a single option
+name or option name with arguments which separated with colon (<code class="docutils literal notranslate"><span class="pre">:</span></code>).
+For example:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">rst:directive</span><span class="p">::</span> toctree
+
+<span class="p">   ..</span> <span class="ow">rst:directive:option</span><span class="p">::</span> caption: caption of ToC
+
+<span class="p">   ..</span> <span class="ow">rst:directive:option</span><span class="p">::</span> glob
+</pre></div>
+</div>
+<p>will be rendered as:</p>
+<dl class="rst directive">
+<dt class="sig sig-object rst">
+<span class="sig-name descname"><span class="pre">..</span> <span class="pre">toctree::</span></span></dt>
+<dd><dl class="rst directive:option">
+<dt class="sig sig-object rst">
+<span class="sig-name descname"><span class="pre">:caption:</span></span><em class="property"> <span class="pre">caption</span> <span class="pre">of</span> <span class="pre">ToC</span></em></dt>
+<dd></dd></dl>
+
+<dl class="rst directive:option">
+<dt class="sig sig-object rst">
+<span class="sig-name descname"><span class="pre">:glob:</span></span></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<p class="rubric">options</p>
+<dl class="rst directive:option">
+<dt class="sig sig-object rst" id="directive-option-rst-directive-option-type">
+<span class="sig-name descname"><span class="pre">:type:</span></span><em class="property"> <span class="pre">description</span> <span class="pre">of</span> <span class="pre">argument</span></em><em class="property"> <span class="pre">(text)</span></em><a class="headerlink" href="#directive-option-rst-directive-option-type" title="Link to this definition">¶</a></dt>
+<dd><p>Describe the type of option value.</p>
+<p>For example:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">rst:directive</span><span class="p">::</span> toctree
+
+<span class="p">   ..</span> <span class="ow">rst:directive:option</span><span class="p">::</span> maxdepth
+      <span class="nc">:type:</span> integer or no value
+</pre></div>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2.1.</span></p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="rst directive">
+<dt class="sig sig-object rst" id="directive-rst-role">
+<span class="sig-name descname"><span class="pre">..</span> <span class="pre">rst:role::</span></span><span class="sig-prename descclassname"> <span class="pre">name</span></span><a class="headerlink" href="#directive-rst-role" title="Link to this definition">¶</a></dt>
+<dd><p>Describes a reST role.  For example:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">rst:role</span><span class="p">::</span> foo
+
+   Foo description.
+</pre></div>
+</div>
+<p>will be rendered as:</p>
+<dl class="rst role">
+<dt class="sig sig-object rst" id="role-foo">
+<span class="sig-name descname"><span class="pre">:foo:</span></span><a class="headerlink" href="#role-foo" title="Link to this definition">¶</a></dt>
+<dd><p>Foo description.</p>
+</dd></dl>
+
+</dd></dl>
+
+<p id="rst-roles">These roles are provided to refer to the described objects:</p>
+<dl class="rst role">
+<dt class="sig sig-object rst" id="role-rst-dir">
+<span class="sig-name descname"><span class="pre">:rst:dir:</span></span><a class="headerlink" href="#role-rst-dir" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object rst" id="role-rst-role">
+<span class="sig-name descname"><span class="pre">:rst:role:</span></span><a class="headerlink" href="#role-rst-role" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../index.html">techwords</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, techwords.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="../../../_sources/doc/usage/domains/restructuredtext.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

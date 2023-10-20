@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>The JavaScript Domain &#8212; techwords 01 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/alabaster.css?v=039e1c02" />
+    <script src="../../../_static/documentation_options.js?v=82a30901"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="the-javascript-domain">
+<h1>The JavaScript Domain<a class="headerlink" href="#the-javascript-domain" title="Link to this heading">¶</a></h1>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.0.</span></p>
+</div>
+<p>The JavaScript domain (name <strong>js</strong>) provides the following directives:</p>
+<dl class="rst directive">
+<dt class="sig sig-object rst" id="directive-js-module">
+<span class="sig-name descname"><span class="pre">..</span> <span class="pre">js:module::</span></span><span class="sig-prename descclassname"> <span class="pre">name</span></span><a class="headerlink" href="#directive-js-module" title="Link to this definition">¶</a></dt>
+<dd><p>This directive sets the module name for object declarations that follow
+after. The module name is used in the global module index and in cross
+references. This directive does not create an object heading like
+<a class="reference internal" href="python.html#directive-py-class" title="py:class directive"><code class="xref rst rst-dir docutils literal notranslate"><span class="pre">py:class</span></code></a> would, for example.</p>
+<p>By default, this directive will create a linkable entity and will cause an
+entry in the global module index, unless the <code class="docutils literal notranslate"><span class="pre">no-index</span></code> option is
+specified.  If this option is specified, the directive will only update the
+current module name.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.6.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 5.2: </span>Module directives support body content.</p>
+</div>
+</dd></dl>
+
+<dl class="rst directive">
+<dt class="sig sig-object rst" id="directive-js-function">
+<span class="sig-name descname"><span class="pre">..</span> <span class="pre">js:function::</span></span><span class="sig-prename descclassname"> <span class="pre">name(signature)</span></span><a class="headerlink" href="#directive-js-function" title="Link to this definition">¶</a></dt>
+<dd><p>Describes a JavaScript function or method.  If you want to describe
+arguments as optional use square brackets as <a class="reference internal" href="python.html#signatures"><span class="std std-ref">documented</span></a>
+for Python signatures.</p>
+<p>You can use fields to give more details about arguments and their expected
+types, errors which may be thrown by the function, and the value being
+returned:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">js:function</span><span class="p">::</span> $.getJSON(href, callback[, errback])
+
+   <span class="nc">:param string href:</span> An URI to the location of the resource.
+   <span class="nc">:param callback:</span> Gets called with the object.
+   <span class="nc">:param errback:</span>
+       Gets called in case the request fails. And a lot of other
+       text so we need multiple lines.
+   <span class="nc">:throws SomeError:</span> For whatever reason in that case.
+   <span class="nc">:returns:</span> Something.
+</pre></div>
+</div>
+<p>This is rendered as:</p>
+<dl class="js function">
+<dt class="sig sig-object js" id="getJSON">
+<span class="sig-prename descclassname"><span class="n"><span class="pre">$</span></span><span class="p"><span class="pre">.</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">getJSON</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">href</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callback</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">errback</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#getJSON" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Arguments<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>href</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">string()</span></code></span>) – An URI to the location of the resource.</p></li>
+<li><p><strong>callback</strong> – Gets called with the object.</p></li>
+<li><p><strong>errback</strong> – Gets called in case the request fails. And a lot of other
+text so we need multiple lines.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><p><span><code class="xref js js-func docutils literal notranslate"><span class="pre">SomeError()</span></code></span> – For whatever reason in that case.</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Something.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="rst directive:option">
+<dt class="sig sig-object rst" id="directive-option-js-function-single-line-parameter-list">
+<span class="sig-name descname"><span class="pre">:single-line-parameter-list:</span></span><em class="property"> <span class="pre">(no</span> <span class="pre">value)</span></em><a class="headerlink" href="#directive-option-js-function-single-line-parameter-list" title="Link to this definition">¶</a></dt>
+<dd><p>Ensures that the function’s parameters will be emitted on a single logical
+line, overriding <a href="#id1"><span class="problematic" id="id2">:confval:`javascript_maximum_signature_line_length`</span></a> and
+<a href="#id3"><span class="problematic" id="id4">:confval:`maximum_signature_line_length`</span></a>.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 7.1.</span></p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="rst directive">
+<dt class="sig sig-object rst" id="directive-js-method">
+<span class="sig-name descname"><span class="pre">..</span> <span class="pre">js:method::</span></span><span class="sig-prename descclassname"> <span class="pre">name(signature)</span></span><a class="headerlink" href="#directive-js-method" title="Link to this definition">¶</a></dt>
+<dd><p>This directive is an alias for <a class="reference internal" href="#directive-js-function" title="js:function directive"><code class="xref rst rst-dir docutils literal notranslate"><span class="pre">js:function</span></code></a>, however it describes
+a function that is implemented as a method on a class object.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.6.</span></p>
+</div>
+<dl class="rst directive:option">
+<dt class="sig sig-object rst" id="directive-option-js-method-single-line-parameter-list">
+<span class="sig-name descname"><span class="pre">:single-line-parameter-list:</span></span><em class="property"> <span class="pre">(no</span> <span class="pre">value)</span></em><a class="headerlink" href="#directive-option-js-method-single-line-parameter-list" title="Link to this definition">¶</a></dt>
+<dd><p>Ensures that the function’s parameters will be emitted on a single logical
+line, overriding <a href="#id5"><span class="problematic" id="id6">:confval:`javascript_maximum_signature_line_length`</span></a> and
+<a href="#id7"><span class="problematic" id="id8">:confval:`maximum_signature_line_length`</span></a>.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 7.1.</span></p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="rst directive">
+<dt class="sig sig-object rst" id="directive-js-class">
+<span class="sig-name descname"><span class="pre">..</span> <span class="pre">js:class::</span></span><span class="sig-prename descclassname"> <span class="pre">name</span></span><a class="headerlink" href="#directive-js-class" title="Link to this definition">¶</a></dt>
+<dd><p>Describes a constructor that creates an object.  This is basically like a
+function but will show up with a <cite>class</cite> prefix:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">js:class</span><span class="p">::</span> MyAnimal(name[, age])
+
+   <span class="nc">:param string name:</span> The name of the animal
+   <span class="nc">:param number age:</span> an optional age for the animal
+</pre></div>
+</div>
+<p>This is rendered as:</p>
+<dl class="js class">
+<dt class="sig sig-object js" id="MyAnimal">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="n"><span class="pre">MyAnimal</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">age</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#MyAnimal" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Arguments<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">string()</span></code></span>) – The name of the animal</p></li>
+<li><p><strong>age</strong> (<span><code class="xref js js-func docutils literal notranslate"><span class="pre">number()</span></code></span>) – an optional age for the animal</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="rst directive:option">
+<dt class="sig sig-object rst" id="directive-option-js-class-single-line-parameter-list">
+<span class="sig-name descname"><span class="pre">:single-line-parameter-list:</span></span><em class="property"> <span class="pre">(no</span> <span class="pre">value)</span></em><a class="headerlink" href="#directive-option-js-class-single-line-parameter-list" title="Link to this definition">¶</a></dt>
+<dd><p>Ensures that the function’s parameters will be emitted on a single logical
+line, overriding <a href="#id9"><span class="problematic" id="id10">:confval:`javascript_maximum_signature_line_length`</span></a> and
+<a href="#id11"><span class="problematic" id="id12">:confval:`maximum_signature_line_length`</span></a>.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 7.1.</span></p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="rst directive">
+<dt class="sig sig-object rst" id="directive-js-data">
+<span class="sig-name descname"><span class="pre">..</span> <span class="pre">js:data::</span></span><span class="sig-prename descclassname"> <span class="pre">name</span></span><a class="headerlink" href="#directive-js-data" title="Link to this definition">¶</a></dt>
+<dd><p>Describes a global variable or constant.</p>
+</dd></dl>
+
+<dl class="rst directive">
+<dt class="sig sig-object rst" id="directive-js-attribute">
+<span class="sig-name descname"><span class="pre">..</span> <span class="pre">js:attribute::</span></span><span class="sig-prename descclassname"> <span class="pre">object.name</span></span><a class="headerlink" href="#directive-js-attribute" title="Link to this definition">¶</a></dt>
+<dd><p>Describes the attribute <em>name</em> of <em>object</em>.</p>
+</dd></dl>
+
+<p id="js-roles">These roles are provided to refer to the described objects:</p>
+<dl class="rst role">
+<dt class="sig sig-object rst" id="role-js-mod">
+<span class="sig-name descname"><span class="pre">:js:mod:</span></span><a class="headerlink" href="#role-js-mod" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object rst" id="role-js-func">
+<span class="sig-name descname"><span class="pre">:js:func:</span></span><a class="headerlink" href="#role-js-func" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object rst" id="role-js-meth">
+<span class="sig-name descname"><span class="pre">:js:meth:</span></span><a class="headerlink" href="#role-js-meth" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object rst" id="role-js-class">
+<span class="sig-name descname"><span class="pre">:js:class:</span></span><a class="headerlink" href="#role-js-class" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object rst" id="role-js-data">
+<span class="sig-name descname"><span class="pre">:js:data:</span></span><a class="headerlink" href="#role-js-data" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object rst" id="role-js-attr">
+<span class="sig-name descname"><span class="pre">:js:attr:</span></span><a class="headerlink" href="#role-js-attr" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../index.html">techwords</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, techwords.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="../../../_sources/doc/usage/domains/javascript.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

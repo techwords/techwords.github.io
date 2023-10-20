@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Application API &#8212; techwords 01 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=039e1c02" />
+    <script src="../../_static/documentation_options.js?v=82a30901"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-sphinx.application">
+<span id="application-api"></span><h1>Application API<a class="headerlink" href="#module-sphinx.application" title="Link to this heading">¶</a></h1>
+<p>Each Sphinx extension is a Python module with at least a <code class="xref py py-func docutils literal notranslate"><span class="pre">setup()</span></code>
+function.  This function is called at initialization time with one argument,
+the application object representing the Sphinx process.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="sphinx.application.Sphinx">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sphinx.application.</span></span><span class="sig-name descname"><span class="pre">Sphinx</span></span><a class="headerlink" href="#sphinx.application.Sphinx" title="Link to this definition">¶</a></dt>
+<dd><p>This application object has the public API described in the following.</p>
+</dd></dl>
+
+<section id="extension-setup">
+<h2>Extension setup<a class="headerlink" href="#extension-setup" title="Link to this heading">¶</a></h2>
+<p>These methods are usually called in an extension’s <code class="docutils literal notranslate"><span class="pre">setup()</span></code> function.</p>
+<p>Examples of using the Sphinx extension API can be seen in the <code class="xref py py-mod docutils literal notranslate"><span class="pre">sphinx.ext</span></code>
+package.</p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="sphinx.application.ExtensionError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sphinx.application.</span></span><span class="sig-name descname"><span class="pre">ExtensionError</span></span><a class="headerlink" href="#sphinx.application.ExtensionError" title="Link to this definition">¶</a></dt>
+<dd><p>All these methods raise this exception if something went wrong with the
+extension API.</p>
+</dd></dl>
+
+</section>
+<section id="emitting-events">
+<h2>Emitting events<a class="headerlink" href="#emitting-events" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sphinx.application.</span></span><span class="sig-name descname"><span class="pre">Sphinx</span></span></dt>
+<dd></dd></dl>
+
+</section>
+<section id="sphinx-runtime-information">
+<h2>Sphinx runtime information<a class="headerlink" href="#sphinx-runtime-information" title="Link to this heading">¶</a></h2>
+<p>The application object also provides runtime information as attributes.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sphinx.application.Sphinx.project">
+<span class="sig-prename descclassname"><span class="pre">Sphinx.</span></span><span class="sig-name descname"><span class="pre">project</span></span><a class="headerlink" href="#sphinx.application.Sphinx.project" title="Link to this definition">¶</a></dt>
+<dd><p>Target project.  See <code class="xref py py-class docutils literal notranslate"><span class="pre">Project</span></code>.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sphinx.application.Sphinx.srcdir">
+<span class="sig-prename descclassname"><span class="pre">Sphinx.</span></span><span class="sig-name descname"><span class="pre">srcdir</span></span><a class="headerlink" href="#sphinx.application.Sphinx.srcdir" title="Link to this definition">¶</a></dt>
+<dd><p>Source directory.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sphinx.application.Sphinx.confdir">
+<span class="sig-prename descclassname"><span class="pre">Sphinx.</span></span><span class="sig-name descname"><span class="pre">confdir</span></span><a class="headerlink" href="#sphinx.application.Sphinx.confdir" title="Link to this definition">¶</a></dt>
+<dd><p>Directory containing <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sphinx.application.Sphinx.doctreedir">
+<span class="sig-prename descclassname"><span class="pre">Sphinx.</span></span><span class="sig-name descname"><span class="pre">doctreedir</span></span><a class="headerlink" href="#sphinx.application.Sphinx.doctreedir" title="Link to this definition">¶</a></dt>
+<dd><p>Directory for storing pickled doctrees.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sphinx.application.Sphinx.outdir">
+<span class="sig-prename descclassname"><span class="pre">Sphinx.</span></span><span class="sig-name descname"><span class="pre">outdir</span></span><a class="headerlink" href="#sphinx.application.Sphinx.outdir" title="Link to this definition">¶</a></dt>
+<dd><p>Directory for storing built document.</p>
+</dd></dl>
+
+</section>
+<section id="sphinx-core-events">
+<span id="events"></span><h2>Sphinx core events<a class="headerlink" href="#sphinx-core-events" title="Link to this heading">¶</a></h2>
+<p>These events are known to the core.  The arguments shown are given to the
+registered event handlers.  Use <code class="xref py py-meth docutils literal notranslate"><span class="pre">Sphinx.connect()</span></code> in an extension’s
+<code class="docutils literal notranslate"><span class="pre">setup</span></code> function (note that <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> can also have a <code class="docutils literal notranslate"><span class="pre">setup</span></code> function) to
+connect handlers to the events.  Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">source_read_handler</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">docname</span><span class="p">,</span> <span class="n">source</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;do something here...&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="n">app</span><span class="p">):</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;source-read&#39;</span><span class="p">,</span> <span class="n">source_read_handler</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Below is an overview of each event that happens during a build. In the list
+below, we include the event name, its callback parameters, and the input and output
+type for that event:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>1. event.config-inited(app,config)
+2. event.builder-inited(app)
+3. event.env-get-outdated(app, env, added, changed, removed)
+4. event.env-before-read-docs(app, env, docnames)
+
+for docname in docnames:
+   5. event.env-purge-doc(app, env, docname)
+
+   if doc changed and not removed:
+      6. source-read(app, docname, source)
+      7. run source parsers: text -&gt; docutils.document
+         - parsers can be added with the app.add_source_parser() API
+      8. apply transforms based on priority: docutils.document -&gt; docutils.document
+         - event.doctree-read(app, doctree) is called in the middle of transforms,
+           transforms come before/after this event depending on their priority.
+
+9. event.env-merge-info(app, env, docnames, other)
+   - if running in parallel mode, this event will be emitted for each process
+
+10. event.env-updated(app, env)
+11. event.env-get-updated(app, env)
+12. event.env-check-consistency(app, env)
+
+# The updated-docs list can be builder dependent, but generally includes all new/changed documents,
+# plus any output from `env-get-updated`, and then all &quot;parent&quot; documents in the ToC tree
+# For builders that output a single page, they are first joined into a single doctree before post-transforms
+# or the doctree-resolved event is emitted
+for docname in updated-docs:
+   13. apply post-transforms (by priority): docutils.document -&gt; docutils.document
+   14. event.doctree-resolved(app, doctree, docname)
+       - In the event that any reference nodes fail to resolve, the following may emit:
+       - event.missing-reference(env, node, contnode)
+       - event.warn-missing-reference(domain, node)
+
+15. Generate output files
+16. event.build-finished(app, exception)
+</pre></div>
+</div>
+<p>Here is a more detailed list of these events.</p>
+</section>
+<section id="checking-the-sphinx-version">
+<h2>Checking the Sphinx version<a class="headerlink" href="#checking-the-sphinx-version" title="Link to this heading">¶</a></h2>
+<p>Use this to adapt your extension to API changes in Sphinx.</p>
+</section>
+<section id="the-config-object">
+<h2>The Config object<a class="headerlink" href="#the-config-object" title="Link to this heading">¶</a></h2>
+</section>
+<section id="the-template-bridge">
+<span id="template-bridge"></span><h2>The template bridge<a class="headerlink" href="#the-template-bridge" title="Link to this heading">¶</a></h2>
+</section>
+<section id="exceptions">
+<span id="id1"></span><h2>Exceptions<a class="headerlink" href="#exceptions" title="Link to this heading">¶</a></h2>
+<span class="target" id="module-sphinx.errors"></span></section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">techwords</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, techwords.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="../../_sources/doc/extdev/appapi.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>sphinx.ext.inheritance_diagram – Include inheritance diagrams &#8212; techwords 01 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/alabaster.css?v=039e1c02" />
+    <script src="../../../_static/documentation_options.js?v=82a30901"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-sphinx.ext.inheritance_diagram">
+<span id="sphinx-ext-inheritance-diagram-include-inheritance-diagrams"></span><h1><a class="reference internal" href="#module-sphinx.ext.inheritance_diagram" title="sphinx.ext.inheritance_diagram: Support for displaying inheritance diagrams via graphviz."><code class="xref py py-mod docutils literal notranslate"><span class="pre">sphinx.ext.inheritance_diagram</span></code></a> – Include inheritance diagrams<a class="headerlink" href="#module-sphinx.ext.inheritance_diagram" title="Link to this heading">¶</a></h1>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 0.6.</span></p>
+</div>
+<p>This extension allows you to include inheritance diagrams, rendered via the
+<a class="reference internal" href="graphviz.html#module-sphinx.ext.graphviz" title="sphinx.ext.graphviz: Support for Graphviz graphs."><code class="xref py py-mod docutils literal notranslate"><span class="pre">Graphviz</span> <span class="pre">extension</span></code></a>.</p>
+<p>It adds this directive:</p>
+<dl class="rst directive">
+<dt class="sig sig-object rst" id="directive-inheritance-diagram">
+<span class="sig-name descname"><span class="pre">..</span> <span class="pre">inheritance-diagram::</span></span><a class="headerlink" href="#directive-inheritance-diagram" title="Link to this definition">¶</a></dt>
+<dd><p>This directive has one or more arguments, each giving a module or class
+name.  Class names can be unqualified; in that case they are taken to exist
+in the currently described module (see <a class="reference internal" href="../domains/python.html#directive-py-module" title="py:module directive"><code class="xref rst rst-dir docutils literal notranslate"><span class="pre">py:module</span></code></a>).</p>
+<p>For each given class, and each class in each given module, the base classes
+are determined.  Then, from all classes and their base classes, a graph is
+generated which is then rendered via the graphviz extension to a directed
+graph.</p>
+<p>This directive supports an option called <code class="docutils literal notranslate"><span class="pre">parts</span></code> that, if given, must be an
+integer, advising the directive to keep that many dot-separated parts
+in the displayed names (from right to left). For example, <code class="docutils literal notranslate"><span class="pre">parts=1</span></code> will
+only display class names, without the names of the modules that contain
+them.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 2.0: </span>The value of for <code class="docutils literal notranslate"><span class="pre">parts</span></code> can also be negative, indicating how many
+parts to drop from the left.  For example, if all your class names start
+with <code class="docutils literal notranslate"><span class="pre">lib.</span></code>, you can give <code class="docutils literal notranslate"><span class="pre">:parts:</span> <span class="pre">-1</span></code> to remove that prefix from the
+displayed node names.</p>
+</div>
+<p>The directive also supports a <code class="docutils literal notranslate"><span class="pre">private-bases</span></code> flag option; if given,
+private base classes (those whose name starts with <code class="docutils literal notranslate"><span class="pre">_</span></code>) will be included.</p>
+<p>You can use <code class="docutils literal notranslate"><span class="pre">caption</span></code> option to give a caption to the diagram.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.1: </span>Added <code class="docutils literal notranslate"><span class="pre">private-bases</span></code> option; previously, all bases were always
+included.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.5: </span>Added <code class="docutils literal notranslate"><span class="pre">caption</span></code> option</p>
+</div>
+<p>It also supports a <code class="docutils literal notranslate"><span class="pre">top-classes</span></code> option which requires one or more class
+names separated by comma. If specified inheritance traversal will stop at the
+specified class names. Given the following Python module:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span>&quot;&quot;&quot;
+       A
+      / \
+     B   C
+    / \ / \
+   E   D   F
+&quot;&quot;&quot;
+
+class A:
+    pass
+
+class B(A):
+    pass
+
+class C(A):
+    pass
+
+class D(B, C):
+    pass
+
+class E(B):
+    pass
+
+class F(C):
+    pass
+</pre></div>
+</div>
+<p>If you have specified a module in the inheritance diagram like this:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">inheritance-diagram</span><span class="p">::</span> dummy.test
+   <span class="nc">:top-classes:</span> dummy.test.B, dummy.test.C
+</pre></div>
+</div>
+<p>any base classes which are ancestors to <code class="docutils literal notranslate"><span class="pre">top-classes</span></code> and are also defined
+in the same module will be rendered as stand alone nodes. In this example
+class A will be rendered as stand alone node in the graph. This is a known
+issue due to how this extension works internally.</p>
+<p>If you don’t want class A (or any other ancestors) to be visible then specify
+only the classes you would like to generate the diagram for like this:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">inheritance-diagram</span><span class="p">::</span> dummy.test.D dummy.test.E dummy.test.F
+   <span class="nc">:top-classes:</span> dummy.test.B, dummy.test.C
+</pre></div>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.7: </span>Added <code class="docutils literal notranslate"><span class="pre">top-classes</span></code> option to limit the scope of inheritance graphs.</p>
+</div>
+</dd></dl>
+
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Link to this heading">¶</a></h2>
+<p>The following are different inheritance diagrams for the internal
+<code class="docutils literal notranslate"><span class="pre">InheritanceDiagram</span></code> class that implements the directive.</p>
+<p>With full names:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">inheritance-diagram</span><span class="p">::</span> sphinx.ext.inheritance_diagram.InheritanceDiagram
+</pre></div>
+</div>
+<p>Showing class names only:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">inheritance-diagram</span><span class="p">::</span> sphinx.ext.inheritance_diagram.InheritanceDiagram
+   <span class="nc">:parts:</span> 1
+</pre></div>
+</div>
+<p>Stopping the diagram at <code class="xref py py-class docutils literal notranslate"><span class="pre">sphinx.util.docutils.SphinxDirective</span></code> (the
+highest superclass still part of Sphinx), and dropping the common left-most
+part (<code class="docutils literal notranslate"><span class="pre">sphinx</span></code>) from all names:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">inheritance-diagram</span><span class="p">::</span> sphinx.ext.inheritance_diagram.InheritanceDiagram
+   <span class="nc">:top-classes:</span> sphinx.util.docutils.SphinxDirective
+   <span class="nc">:parts:</span> -1
+</pre></div>
+</div>
+<dl class="py class">
+<dt class="sig sig-object py" id="sphinx.ext.inheritance_diagram.sphinx.ext.inheritance_diagram.InheritanceDiagram">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sphinx.ext.inheritance_diagram.</span></span><span class="sig-name descname"><span class="pre">InheritanceDiagram</span></span><a class="headerlink" href="#sphinx.ext.inheritance_diagram.sphinx.ext.inheritance_diagram.InheritanceDiagram" title="Link to this definition">¶</a></dt>
+<dd><p>The internal class that implements the <code class="docutils literal notranslate"><span class="pre">inheritance-diagram</span></code> directive.</p>
+</dd></dl>
+
+</section>
+<section id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Link to this heading">¶</a></h2>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../index.html">techwords</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, techwords.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="../../../_sources/doc/usage/extensions/inheritance.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

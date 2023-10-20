@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Markdown &#8212; techwords 01 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=039e1c02" />
+    <script src="../../_static/documentation_options.js?v=82a30901"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="markdown">
+<span id="id1"></span><h1>Markdown<a class="headerlink" href="#markdown" title="Link to this heading">¶</a></h1>
+<p><a class="reference external" href="https://daringfireball.net/projects/markdown/">Markdown</a> is a lightweight markup language with a simplistic plain text
+formatting syntax.  It exists in many syntactically different <em>flavors</em>.  To
+support Markdown-based documentation, Sphinx can use <a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/">MyST-Parser</a>.
+MyST-Parser is a Docutils bridge to <a class="reference external" href="https://github.com/executablebooks/markdown-it-py">markdown-it-py</a>, a Python package for
+parsing the <a class="reference external" href="https://commonmark.org/">CommonMark</a> Markdown flavor.</p>
+<section id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Link to this heading">¶</a></h2>
+<p>To configure your Sphinx project for Markdown support, proceed as follows:</p>
+<ol class="arabic">
+<li><p>Install the Markdown parser <em>MyST-Parser</em>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">myst</span><span class="o">-</span><span class="n">parser</span>
+</pre></div>
+</div>
+</li>
+<li><p>Add <em>myst_parser</em> to the
+<a href="#id6"><span class="problematic" id="id7">:confval:`list of configured extensions &lt;extensions&gt;`</span></a>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;myst_parser&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>MyST-Parser requires Sphinx 2.1 or newer.</p>
+</div>
+</li>
+<li><p>If you want to use Markdown files with extensions other than <code class="docutils literal notranslate"><span class="pre">.md</span></code>, adjust
+the <a href="#id8"><span class="problematic" id="id9">:confval:`source_suffix`</span></a> variable.  The following example configures
+Sphinx to parse all files with the extensions <code class="docutils literal notranslate"><span class="pre">.md</span></code> and <code class="docutils literal notranslate"><span class="pre">.txt</span></code> as
+Markdown:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">source_suffix</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;.rst&#39;</span><span class="p">:</span> <span class="s1">&#39;restructuredtext&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;.txt&#39;</span><span class="p">:</span> <span class="s1">&#39;markdown&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;.md&#39;</span><span class="p">:</span> <span class="s1">&#39;markdown&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>You can further configure <em>MyST-Parser</em> to allow custom syntax that
+standard <em>CommonMark</em> doesn’t support.  Read more in the <a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/using/syntax-optional.html">MyST-Parser
+documentation</a>.</p></li>
+</ol>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">techwords</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, techwords.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="../../_sources/doc/usage/markdown.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

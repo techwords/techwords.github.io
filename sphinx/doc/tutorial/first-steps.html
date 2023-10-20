@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>First steps to document your project using Sphinx &#8212; techwords 01 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=039e1c02" />
+    <script src="../../_static/documentation_options.js?v=82a30901"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="first-steps-to-document-your-project-using-sphinx">
+<h1>First steps to document your project using Sphinx<a class="headerlink" href="#first-steps-to-document-your-project-using-sphinx" title="Link to this heading">¶</a></h1>
+<section id="building-your-html-documentation">
+<h2>Building your HTML documentation<a class="headerlink" href="#building-your-html-documentation" title="Link to this heading">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">index.rst</span></code> file that <code class="docutils literal notranslate"><span class="pre">sphinx-quickstart</span></code> created has some content
+already, and it gets rendered as the front page of your HTML documentation.  It
+is written in reStructuredText, a powerful markup language.</p>
+<p>Modify the file as follows:</p>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">docs/source/index.rst</span><a class="headerlink" href="#id3" title="Link to this code">¶</a></div>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="gh">Welcome to Lumache&#39;s documentation!</span>
+<span class="gh">===================================</span>
+
+<span class="gs">**Lumache**</span> (/lu&#39;make/) is a Python library for cooks and food lovers that
+creates recipes mixing random ingredients.  It pulls data from the `Open Food
+Facts database &lt;https://world.openfoodfacts.org/&gt;`_ and offers a <span class="ge">*simple*</span> and
+<span class="ge">*intuitive*</span> API.
+
+<span class="p">..</span> <span class="ow">note</span><span class="p">::</span>
+
+   This project is under active development.
+</pre></div>
+</div>
+</div>
+<p>This showcases several features of the reStructuredText syntax, including:</p>
+<ul class="simple">
+<li><p>a <strong>section header</strong> using <code class="docutils literal notranslate"><span class="pre">===</span></code> for the underline,</p></li>
+<li><p>two examples of <a class="reference internal" href="../usage/restructuredtext/basics.html#rst-inline-markup"><span class="std std-ref">Inline markup</span></a>: <code class="docutils literal notranslate"><span class="pre">**strong</span> <span class="pre">emphasis**</span></code> (typically
+bold) and <code class="docutils literal notranslate"><span class="pre">*emphasis*</span></code> (typically italics),</p></li>
+<li><p>an <strong>inline external link</strong>,</p></li>
+<li><p>and a <code class="docutils literal notranslate"><span class="pre">note</span></code> <strong>admonition</strong> (one of the available <a class="reference internal" href="../usage/restructuredtext/basics.html#rst-directives"><span class="std std-ref">directives</span></a>)</p></li>
+</ul>
+<p>Now to render it with the new content, you can use the <code class="docutils literal notranslate"><span class="pre">sphinx-build</span></code> command
+as before, or leverage the convenience script as follows:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(.venv)</span> <span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>docs
+<span class="gp gp-VirtualEnv">(.venv)</span> <span class="gp">$ </span>make<span class="w"> </span>html
+</pre></div>
+</div>
+<p>After running this command, you will see that <code class="docutils literal notranslate"><span class="pre">index.html</span></code> reflects the new
+changes!</p>
+</section>
+<section id="building-your-documentation-in-other-formats">
+<h2>Building your documentation in other formats<a class="headerlink" href="#building-your-documentation-in-other-formats" title="Link to this heading">¶</a></h2>
+<p>Sphinx supports a variety of formats apart from HTML, including PDF, EPUB,
+<a class="reference internal" href="../usage/builders/index.html#builders"><span class="std std-ref">and more</span></a>.  For example, to build your documentation
+in EPUB format, run this command from the <code class="docutils literal notranslate"><span class="pre">docs</span></code> directory:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(.venv)</span> <span class="gp">$ </span>make<span class="w"> </span>epub
+</pre></div>
+</div>
+<p>After that, you will see the files corresponding to the e-book under
+<code class="docutils literal notranslate"><span class="pre">docs/build/epub/</span></code>.  You can either open <code class="docutils literal notranslate"><span class="pre">Lumache.epub</span></code> with an
+EPUB-compatible e-book viewer, like <a class="reference external" href="https://calibre-ebook.com/">Calibre</a>,
+or preview <code class="docutils literal notranslate"><span class="pre">index.xhtml</span></code> on a web browser.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To quickly display a complete list of possible output formats, plus some
+extra useful commands, you can run <code class="code docutils literal notranslate"><span class="pre">make</span> <span class="pre">help</span></code>.</p>
+</div>
+<p>Each output format has some specific configuration options that you can tune,
+<a class="reference internal" href="../usage/configuration.html#epub-options"><span class="std std-ref">including EPUB</span></a>.  For instance, the default value of
+<a href="#id1"><span class="problematic" id="id2">:confval:`epub_show_urls`</span></a> is <code class="docutils literal notranslate"><span class="pre">inline</span></code>, which means that, by default, URLs are
+shown right after the corresponding link, in parentheses.  You can change that
+behavior by adding the following code at the end of your <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># EPUB options</span>
+<span class="n">epub_show_urls</span> <span class="o">=</span> <span class="s1">&#39;footnote&#39;</span>
+</pre></div>
+</div>
+<p>With this configuration value, and after running <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">epub</span></code> again, you will
+notice that URLs appear now as footnotes, which avoids cluttering the text.
+Sweet! Read on to explore <span class="xref std std-doc">other ways to customize
+Sphinx</span>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Generating a PDF using Sphinx can be done running <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">latexpdf</span></code>,
+provided that the system has a working LaTeX installation,
+as explained in the documentation of <a class="reference internal" href="../usage/builders/index.html#sphinx.builders.latex.LaTeXBuilder" title="sphinx.builders.latex.LaTeXBuilder"><code class="xref py py-class docutils literal notranslate"><span class="pre">sphinx.builders.latex.LaTeXBuilder</span></code></a>.
+Although this is perfectly feasible, such installations are often big,
+and in general LaTeX requires careful configuration in some cases,
+so PDF generation is out of scope for this tutorial.</p>
+</div>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">techwords</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, techwords.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="../../_sources/doc/tutorial/first-steps.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>sphinx.ext.graphviz – Add Graphviz graphs &#8212; techwords 01 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/alabaster.css?v=039e1c02" />
+    <script src="../../../_static/documentation_options.js?v=82a30901"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-sphinx.ext.graphviz">
+<span id="sphinx-ext-graphviz-add-graphviz-graphs"></span><h1><a class="reference internal" href="#module-sphinx.ext.graphviz" title="sphinx.ext.graphviz: Support for Graphviz graphs."><code class="xref py py-mod docutils literal notranslate"><span class="pre">sphinx.ext.graphviz</span></code></a> – Add Graphviz graphs<a class="headerlink" href="#module-sphinx.ext.graphviz" title="Link to this heading">¶</a></h1>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 0.6.</span></p>
+</div>
+<p>This extension allows you to embed <a class="reference external" href="https://graphviz.org/">Graphviz</a> graphs in
+your documents.</p>
+<p>It adds these directives:</p>
+<dl class="rst directive">
+<dt class="sig sig-object rst" id="directive-graphviz">
+<span class="sig-name descname"><span class="pre">..</span> <span class="pre">graphviz::</span></span><a class="headerlink" href="#directive-graphviz" title="Link to this definition">¶</a></dt>
+<dd><p>Directive to embed graphviz code.  The input code for <code class="docutils literal notranslate"><span class="pre">dot</span></code> is given as the
+content.  For example:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">graphviz</span><span class="p">::</span>
+
+   digraph foo {
+      &quot;bar&quot; -&gt; &quot;baz&quot;;
+   }
+</pre></div>
+</div>
+<p>In HTML output, the code will be rendered to a PNG or SVG image (see
+<a href="#id1"><span class="problematic" id="id2">:confval:`graphviz_output_format`</span></a>).  In LaTeX output, the code will be
+rendered to an embeddable PDF file.</p>
+<p>You can also embed external dot files, by giving the file name as an
+argument to <a class="reference internal" href="#directive-graphviz" title="graphviz directive"><code class="xref rst rst-dir docutils literal notranslate"><span class="pre">graphviz</span></code></a> and no additional content:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">graphviz</span><span class="p">::</span> external.dot
+</pre></div>
+</div>
+<p>As for all file references in Sphinx, if the filename is absolute, it is
+taken as relative to the source directory.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.1: </span>Added support for external files.</p>
+</div>
+<p class="rubric">options</p>
+<dl class="rst directive:option">
+<dt class="sig sig-object rst" id="directive-option-graphviz-alt">
+<span class="sig-name descname"><span class="pre">:alt:</span></span><em class="property"> <span class="pre">alternate</span> <span class="pre">text</span></em><em class="property"> <span class="pre">(text)</span></em><a class="headerlink" href="#directive-option-graphviz-alt" title="Link to this definition">¶</a></dt>
+<dd><p>The alternate text of the graph.  By default, the graph code is used to
+the alternate text.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="rst directive:option">
+<dt class="sig sig-object rst" id="directive-option-graphviz-align">
+<span class="sig-name descname"><span class="pre">:align:</span></span><em class="property"> <span class="pre">alignment</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">graph</span></em><em class="property"> <span class="pre">(left,</span> <span class="pre">center</span> <span class="pre">or</span> <span class="pre">right)</span></em><a class="headerlink" href="#directive-option-graphviz-align" title="Link to this definition">¶</a></dt>
+<dd><p>The horizontal alignment of the graph.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.5.</span></p>
+</div>
+</dd></dl>
+
+<dl class="rst directive:option">
+<dt class="sig sig-object rst" id="directive-option-graphviz-caption">
+<span class="sig-name descname"><span class="pre">:caption:</span></span><em class="property"> <span class="pre">caption</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">graph</span></em><em class="property"> <span class="pre">(text)</span></em><a class="headerlink" href="#directive-option-graphviz-caption" title="Link to this definition">¶</a></dt>
+<dd><p>The caption of the graph.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="rst directive:option">
+<dt class="sig sig-object rst" id="directive-option-graphviz-layout">
+<span class="sig-name descname"><span class="pre">:layout:</span></span><em class="property"> <span class="pre">layout</span> <span class="pre">type</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">graph</span></em><em class="property"> <span class="pre">(text)</span></em><a class="headerlink" href="#directive-option-graphviz-layout" title="Link to this definition">¶</a></dt>
+<dd><p>The layout of the graph (ex. <code class="docutils literal notranslate"><span class="pre">dot</span></code>, <code class="docutils literal notranslate"><span class="pre">neato</span></code> and so on).  A path to the
+graphviz commands are also allowed.  By default, <a href="#id3"><span class="problematic" id="id4">:confval:`graphviz_dot`</span></a>
+is used.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.4.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 2.2: </span>Renamed from <code class="docutils literal notranslate"><span class="pre">graphviz_dot</span></code></p>
+</div>
+</dd></dl>
+
+<dl class="rst directive:option">
+<dt class="sig sig-object rst" id="directive-option-graphviz-name">
+<span class="sig-name descname"><span class="pre">:name:</span></span><em class="property"> <span class="pre">label</span></em><em class="property"> <span class="pre">(text)</span></em><a class="headerlink" href="#directive-option-graphviz-name" title="Link to this definition">¶</a></dt>
+<dd><p>The label of the graph.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.6.</span></p>
+</div>
+</dd></dl>
+
+<dl class="rst directive:option">
+<dt class="sig sig-object rst" id="directive-option-graphviz-class">
+<span class="sig-name descname"><span class="pre">:class:</span></span><em class="property"> <span class="pre">class</span> <span class="pre">names</span></em><em class="property"> <span class="pre">(a</span> <span class="pre">list</span> <span class="pre">of</span> <span class="pre">class</span> <span class="pre">names</span> <span class="pre">separated</span> <span class="pre">by</span> <span class="pre">spaces)</span></em><a class="headerlink" href="#directive-option-graphviz-class" title="Link to this definition">¶</a></dt>
+<dd><p>The class name of the graph.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2.4.</span></p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="rst directive">
+<dt class="sig sig-object rst" id="directive-graph">
+<span class="sig-name descname"><span class="pre">..</span> <span class="pre">graph::</span></span><a class="headerlink" href="#directive-graph" title="Link to this definition">¶</a></dt>
+<dd><p>Directive for embedding a single undirected graph.  The name is given as a
+directive argument, the contents of the graph are the directive content.
+This is a convenience directive to generate <code class="docutils literal notranslate"><span class="pre">graph</span> <span class="pre">&lt;name&gt;</span> <span class="pre">{</span> <span class="pre">&lt;content&gt;</span> <span class="pre">}</span></code>.</p>
+<p>For example:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">graph</span><span class="p">::</span> foo
+
+   &quot;bar&quot; -- &quot;baz&quot;;
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The graph name is passed unchanged to Graphviz.  If it contains
+non-alphanumeric characters (e.g. a dash), you will have to double-quote
+it.</p>
+</div>
+<p class="rubric">options</p>
+<p>Same as <a class="reference internal" href="#directive-graphviz" title="graphviz directive"><code class="xref rst rst-dir docutils literal notranslate"><span class="pre">graphviz</span></code></a>.</p>
+<dl class="rst directive:option">
+<dt class="sig sig-object rst" id="directive-option-graph-alt">
+<span class="sig-name descname"><span class="pre">:alt:</span></span><em class="property"> <span class="pre">alternate</span> <span class="pre">text</span></em><em class="property"> <span class="pre">(text)</span></em><a class="headerlink" href="#directive-option-graph-alt" title="Link to this definition">¶</a></dt>
+<dd><div class="versionadded">
+<p><span class="versionmodified added">New in version 1.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="rst directive:option">
+<dt class="sig sig-object rst" id="directive-option-graph-align">
+<span class="sig-name descname"><span class="pre">:align:</span></span><em class="property"> <span class="pre">alignment</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">graph</span></em><em class="property"> <span class="pre">(left,</span> <span class="pre">center</span> <span class="pre">or</span> <span class="pre">right)</span></em><a class="headerlink" href="#directive-option-graph-align" title="Link to this definition">¶</a></dt>
+<dd><div class="versionadded">
+<p><span class="versionmodified added">New in version 1.5.</span></p>
+</div>
+</dd></dl>
+
+<dl class="rst directive:option">
+<dt class="sig sig-object rst" id="directive-option-graph-caption">
+<span class="sig-name descname"><span class="pre">:caption:</span></span><em class="property"> <span class="pre">caption</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">graph</span></em><em class="property"> <span class="pre">(text)</span></em><a class="headerlink" href="#directive-option-graph-caption" title="Link to this definition">¶</a></dt>
+<dd><div class="versionadded">
+<p><span class="versionmodified added">New in version 1.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="rst directive:option">
+<dt class="sig sig-object rst" id="directive-option-graph-layout">
+<span class="sig-name descname"><span class="pre">:layout:</span></span><em class="property"> <span class="pre">layout</span> <span class="pre">type</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">graph</span></em><em class="property"> <span class="pre">(text)</span></em><a class="headerlink" href="#directive-option-graph-layout" title="Link to this definition">¶</a></dt>
+<dd><div class="versionadded">
+<p><span class="versionmodified added">New in version 1.4.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 2.2: </span>Renamed from <code class="docutils literal notranslate"><span class="pre">graphviz_dot</span></code></p>
+</div>
+</dd></dl>
+
+<dl class="rst directive:option">
+<dt class="sig sig-object rst" id="directive-option-graph-name">
+<span class="sig-name descname"><span class="pre">:name:</span></span><em class="property"> <span class="pre">label</span></em><em class="property"> <span class="pre">(text)</span></em><a class="headerlink" href="#directive-option-graph-name" title="Link to this definition">¶</a></dt>
+<dd><div class="versionadded">
+<p><span class="versionmodified added">New in version 1.6.</span></p>
+</div>
+</dd></dl>
+
+<dl class="rst directive:option">
+<dt class="sig sig-object rst" id="directive-option-graph-class">
+<span class="sig-name descname"><span class="pre">:class:</span></span><em class="property"> <span class="pre">class</span> <span class="pre">names</span></em><em class="property"> <span class="pre">(a</span> <span class="pre">list</span> <span class="pre">of</span> <span class="pre">class</span> <span class="pre">names</span> <span class="pre">separated</span> <span class="pre">by</span> <span class="pre">spaces)</span></em><a class="headerlink" href="#directive-option-graph-class" title="Link to this definition">¶</a></dt>
+<dd><p>The class name of the graph.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2.4.</span></p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="rst directive">
+<dt class="sig sig-object rst" id="directive-digraph">
+<span class="sig-name descname"><span class="pre">..</span> <span class="pre">digraph::</span></span><a class="headerlink" href="#directive-digraph" title="Link to this definition">¶</a></dt>
+<dd><p>Directive for embedding a single directed graph.  The name is given as a
+directive argument, the contents of the graph are the directive content.
+This is a convenience directive to generate <code class="docutils literal notranslate"><span class="pre">digraph</span> <span class="pre">&lt;name&gt;</span> <span class="pre">{</span> <span class="pre">&lt;content&gt;</span> <span class="pre">}</span></code>.</p>
+<p>For example:</p>
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">digraph</span><span class="p">::</span> foo
+
+   &quot;bar&quot; -&gt; &quot;baz&quot; -&gt; &quot;quux&quot;;
+</pre></div>
+</div>
+<p class="rubric">options</p>
+<p>Same as <a class="reference internal" href="#directive-graphviz" title="graphviz directive"><code class="xref rst rst-dir docutils literal notranslate"><span class="pre">graphviz</span></code></a>.</p>
+<dl class="rst directive:option">
+<dt class="sig sig-object rst" id="directive-option-digraph-alt">
+<span class="sig-name descname"><span class="pre">:alt:</span></span><em class="property"> <span class="pre">alternate</span> <span class="pre">text</span></em><em class="property"> <span class="pre">(text)</span></em><a class="headerlink" href="#directive-option-digraph-alt" title="Link to this definition">¶</a></dt>
+<dd><div class="versionadded">
+<p><span class="versionmodified added">New in version 1.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="rst directive:option">
+<dt class="sig sig-object rst" id="directive-option-digraph-align">
+<span class="sig-name descname"><span class="pre">:align:</span></span><em class="property"> <span class="pre">alignment</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">graph</span></em><em class="property"> <span class="pre">(left,</span> <span class="pre">center</span> <span class="pre">or</span> <span class="pre">right)</span></em><a class="headerlink" href="#directive-option-digraph-align" title="Link to this definition">¶</a></dt>
+<dd><div class="versionadded">
+<p><span class="versionmodified added">New in version 1.5.</span></p>
+</div>
+</dd></dl>
+
+<dl class="rst directive:option">
+<dt class="sig sig-object rst" id="directive-option-digraph-caption">
+<span class="sig-name descname"><span class="pre">:caption:</span></span><em class="property"> <span class="pre">caption</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">graph</span></em><em class="property"> <span class="pre">(text)</span></em><a class="headerlink" href="#directive-option-digraph-caption" title="Link to this definition">¶</a></dt>
+<dd><div class="versionadded">
+<p><span class="versionmodified added">New in version 1.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="rst directive:option">
+<dt class="sig sig-object rst" id="directive-option-digraph-layout">
+<span class="sig-name descname"><span class="pre">:layout:</span></span><em class="property"> <span class="pre">layout</span> <span class="pre">type</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">graph</span></em><em class="property"> <span class="pre">(text)</span></em><a class="headerlink" href="#directive-option-digraph-layout" title="Link to this definition">¶</a></dt>
+<dd><div class="versionadded">
+<p><span class="versionmodified added">New in version 1.4.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 2.2: </span>Renamed from <code class="docutils literal notranslate"><span class="pre">graphviz_dot</span></code></p>
+</div>
+</dd></dl>
+
+<dl class="rst directive:option">
+<dt class="sig sig-object rst" id="directive-option-digraph-name">
+<span class="sig-name descname"><span class="pre">:name:</span></span><em class="property"> <span class="pre">label</span></em><em class="property"> <span class="pre">(text)</span></em><a class="headerlink" href="#directive-option-digraph-name" title="Link to this definition">¶</a></dt>
+<dd><div class="versionadded">
+<p><span class="versionmodified added">New in version 1.6.</span></p>
+</div>
+</dd></dl>
+
+<dl class="rst directive:option">
+<dt class="sig sig-object rst" id="directive-option-digraph-class">
+<span class="sig-name descname"><span class="pre">:class:</span></span><em class="property"> <span class="pre">class</span> <span class="pre">names</span></em><em class="property"> <span class="pre">(a</span> <span class="pre">list</span> <span class="pre">of</span> <span class="pre">class</span> <span class="pre">names</span> <span class="pre">separated</span> <span class="pre">by</span> <span class="pre">spaces)</span></em><a class="headerlink" href="#directive-option-digraph-class" title="Link to this definition">¶</a></dt>
+<dd><p>The class name of the graph.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2.4.</span></p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<p>There are also these config values:</p>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../index.html">techwords</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, techwords.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="../../../_sources/doc/usage/extensions/graphviz.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
